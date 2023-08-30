@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const routes = express.Router()
 //import all model's objects
-const {users,products,} = require('../model')
+const {users,product,orders} = require('../model')
 //=====Routes for users=====
 routes.get('/users',(req,res)=>{
     users.getUsers(req,res)
@@ -44,19 +44,19 @@ routes.post('/user/:id/order',bodyParser.json(),(req,res)=>{
 
 //====Routes for products=====
 routes.get('/products',(req,res)=>{
-    products.getProducts(req,res)
+    product.getProducts(req,res)
 })
 routes.get('/product/:id',(req,res)=>{
-    products.getProduct(req,res)
+    product.getProduct(req,res)
 })
 routes.patch('/product/:id',bodyParser.json(),(req,res)=>{
-    products.updateProduct(req,res)
+    product.updateProduct(req,res)
 })
 routes.delete('/product/:id',(req,res)=>{
-    products.deleteProduct(req,res)
+    product.deleteProduct(req,res)
 })
 routes.post('/addProduct',bodyParser.json(),(req,res)=>{
-    products.addProduct(req,res)
+    product.addProduct(req,res)
 })
 module.exports ={
     express,
