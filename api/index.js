@@ -33,5 +33,5 @@ app.get('/',
 // Handling all errors using error middleware.
 app.use(errorHandler)
 app.listen(port, ()=>{
-    console.log(`The server is running on port ${port}`);
+    console.log(`The server is running on port http://localhost:${port}`);
 })
