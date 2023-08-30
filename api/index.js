@@ -31,7 +31,7 @@ app.get('/',
         './static/html/index.html'))
 })
 // Handling all errors using error middleware.
-app.use(errorHandling)
+app.use(errorHandler)
 app.listen(port, ()=>{
     console.log(`The server is running on port ${port}`);
 })
