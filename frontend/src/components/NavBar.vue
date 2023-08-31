@@ -5,9 +5,9 @@
     <div class="container-fluid">
       <router-link to="/"
         ><img class="navbar-logo"
-          src="https://i.postimg.cc/HsbqzZy5/Bv-1.png "
+          src="https://i.postimg.cc/nzTTHzvG/Meubel-House-Logos-05.png"
           id="fade-in"
-          alt="Bella Visage"
+          alt="Decor" 
       /></router-link>
       <button
         class="navbar-toggler"
@@ -22,19 +22,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="navbar" class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li id="fade-in"><router-link to="/">𝐇𝐨𝐦𝐞</router-link></li>
+          <li id="fade-in"><router-link to="/">Home</router-link></li>
     
-          <li id="fade-in">
-            <router-link to="/products">𝐏𝐫𝐨𝐝𝐮𝐜𝐭</router-link>
+          <li class="move" id="fade-in">
+            <router-link to="/products">Product</router-link>
+          </li>
+          <li class="move" id="fade-in">
+            <router-link to="/about">About</router-link>
+          </li>
+          <li class="move" id="fade-in">
+            <router-link to="/contact">Contact</router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/about"> 𝐀𝐛𝐨𝐮𝐭</router-link>
+            <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/contact">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</router-link>
+            <router-link to="/admin"><i class="fa-solid fa-magnifying-glass"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/admin">𝐀𝐝𝐦𝐢𝐧</router-link>
+            <router-link to="/admin"><i class="fa-solid fa-cart-shopping"></i></router-link>
           </li>
         </ul>
       </div>
@@ -52,6 +58,10 @@ export default {
 }
 </script>
 <style scoped>
+*{
+  font-family: 'REM', sans-serif;
+}
+
 
 @keyframes fadeIn {
     from {
@@ -75,8 +85,8 @@ export default {
   }
   
   nav {
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background: #FFFFFF;
+    box-shadow: 0 5px 6px rgba(255, 255, 255, 0.958);
     padding: 25px !important;
   }
   #navbar {
@@ -98,7 +108,7 @@ export default {
   }
   /* styling for active links for the future */
   #navbar li a:hover,#navbar li a.active {
-    color: black !important;
+    color: rgb(0, 0, 0) !important;
   }
 
   /* styling for active links for the future */
@@ -106,15 +116,15 @@ export default {
   #navbar li a:hover::after {
     content: "";
     width: 56%;
-    height: 2px;
-    background: black !important;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.43) !important;
     position: absolute;
     bottom: -4px;
     left: 20px;
   }
 
   .navbar-logo{
-  height: 50px;
+  height: 30px;
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;

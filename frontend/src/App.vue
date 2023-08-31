@@ -1,13 +1,13 @@
 <template>
    <div>
     <nav>
-      <NavBarComp/>
+      <NavBar/>
     </nav>
     <main>
       <router-view/>
     </main>
     <footer>
-      <FooterComp/>
+      <Footer/>
     </footer>
   </div>
 </template>
