@@ -1,6 +1,6 @@
 const db = require('../config')
 const {hash,compare} = require('bcrypt')
-const {createToken} = require('../middleware/userauthentication')
+const {tokenCreated} = require('../middleware/userauthentication')
 class Users{
     getUsers(req,res){
         const query =`
