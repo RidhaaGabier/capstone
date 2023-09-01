@@ -3,108 +3,116 @@
       <!--hero-->
               <section class=" overflow-x-hidden hero m-0 align-content-sm-start">
                 <div class="hero-inner text-center">
+                  <img src="https://i.postimg.cc/nzTTHzvG/Meubel-House-Logos-05.png" alt="">
                   <p class="text">Shop</p>
-                 <a href="#" class="btn shadow__btn mb-2">Home<i class="fa-regular fa-greater-than">Shop</i></a>
+                 <a href="#" class="btn shadow__btn mb-2">Item<i class="fa-regular fa-greater-than">Shop</i></a>
                 </div>
               </section>
-    <!----featured info-->
-                <section id="featured" class="mt-3">
-                <div>
-                  <h2 class="text-black">Popular Categories</h2>
-                  <p class="text-black">We have a Featured Collection available for Men and Women.</p>
-                </div>
-              </section>
-      <!--categories--->
-      <div class="container mb-4">
-          <div class="row">
-            <div class="column">
-              <div class="card">
-                <div class="content">
-                  <div class="front">
-                    <img class="profile" width="100%" src="https://i.postimg.cc/dVfZFzTs/adicane-clog-men.jpg">
-                    <h2 class="mt-4 text-white">Sandals</h2>
-                  </div>
-                  <div class="back from-left">
-                    <p class="des fw-semibold p-2">
-                    Shop quality summer shoes for both men and women.
-                    </p>
-                    <button class="shadow__btn">
-                      <a href="/products" >Shop Now!</a>
-                    </button>
-                  </div>
-                </div>
-            </div>
-          </div>
-            <div class="column">
-              <div class="card">
-                <div class="content">
-                  <div class="front">
-                    <img class="profile" width="100%" src="https://i.postimg.cc/MZYcHcjr/manola-court-heel.jpg">
-                    <h2 class="mt-4 text-white">Formal</h2>
-                  </div>
-                  <div class="back from-bottom">
-                    <p class="des fw-semibold p-2">
-                      Shop quality formal shoes to complete your look!
-                    </p>
-                    <button class="shadow__btn">
-                      <a href="/products" >Shop Now!</a>
-                    </button>
-                  </div>
-                </div>
+              
+
+              <div class="sort-filter-container">
+              <div class="filter-container">
+              <label for="filter">Filter by:</label>
+              <select id="filter">
+              <option value="all">All Items</option>
+              <option value="category1">Category 1</option>
+              <option value="category2">Category 2</option>
+              <option value="category3">Category 3</option>
+              </select>
+              <labe style="margin-left:20px;">&#11820; | Showing 1-0 of 10 results</labe>
               </div>
-            </div>
-          <div class="column">
-            <div class="card">
-              <div class="content">
-                <div class="front">
-                  <img class="profile" width="100%" src="https://i.postimg.cc/zBrBX5Dr/zig-dynamica-men.jpg" >
-                  <h2 class="mt-4 text-white">Sneakers</h2>
-                </div>
-                <div class="back from-right">
-                  <p class="des fw-semibold p-2">
-                  Shop the best quality and step up your shoe drip!
-                  </p>
-                  <button class="shadow__btn">
-                    <a href="/products">Shop Now!</a>
-                    </button>
-                </div>
+              <div class="sort-container">
+                <label>Show </label> <label style="background-color: white; color: rgb(58, 58, 58); padding: 7px;"> 16</label>
+              <label for="sort">Sort by:</label>
+              <select id="sort">
+              <option value="relevance">Relevance</option>
+              <option value="latest">Latest</option>
+              <option value="popular">Popular</option>
+              <option value="price-low">Price Low to High</option>
+              <option value="price-high">Price High to Low</option>
+              </select>
               </div>
-            </div>
-          </div>
-         </div>
-      </div>
-                 <!--FAQs-->
-                 <section id="featured" class="mt-3">
-                <div>
-                  <h2 class="text-black">Frequently Asked Questions</h2>
-                  <p class="text-black">Know more about our conditions.</p>
-                </div>
-              </section>
-            <!-- <div class="box">
-                  <p class="heading">FAQs</p>
-                  <div class="faqs">
-                      <details>
-                        <summary class="fw-bold text-black">Discount</summary>
-                        <p class="text mt-2 fw-semibold text-black info"> If you buy more than 2 items over R600 , you get a 10% discount on the total price.</p>
-                      </details>
-                      <details>
-                        <summary class="fw-bold text-black">Online Payments</summary>
-                        <p class="text mt-2 fw-semibold text-black info">We offer various payment methods for prepaid to paying via monthly installlments.</p>
-                      </details>
-                      <details>
-                        <summary class="fw-bold text-black">Delivery</summary>
-                        <p class="text mt-2 fw-semibold text-black info"> We deliver in 3-5 business days and offer free delivery for purchases over R500.</p>
-                      </details>
-                  </div>
-            </div> -->
+              </div> 
+
+          <Products/>
+             
     </div>
   </template>
   <script>
-  // @ is an alias to /src
+  import Products from '@/components/Products.vue';
+
   export default {
+    components:{
+      Products,
+    },
+    mounted() {
+        this.$store.dispatch('fetchProducts');
+    },
+    computed: {
+        products() {
+            return this.$store.state.products;
+        },
   }
+}
   </script>
   <style scoped>
+
+
+.sort-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F9F1E7;
+  padding: 10px;
+  /* border-radius: 2px; */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container,
+.sort-container {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.filter-container select,
+.sort-container select {
+  margin-left: 8px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+/* Style the select arrow */
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+/* Hover effect */
+select:hover {
+  background-color:whitesmoke;
+}
+
+
+
+
+
+
   @import url('https://fonts.googleapis.com/css2?family=REM:wght@200&display=swap');
   body{
     overflow-x: hidden;

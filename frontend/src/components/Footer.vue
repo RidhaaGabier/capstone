@@ -4,10 +4,10 @@
        <!-- Footer -->
 <footer class="text-center text-lg-start  text-muted">
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <section style="background-color:#979797;" class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
       <!-- Left -->
       <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
+        <span style="color:whitesmoke !important;" >Get connected with us on social networks:</span>
       </div>
       <!-- Left -->
   
@@ -42,7 +42,7 @@
               <i class="fas fa-gem me-3"></i>𝘿𝙚𝙘𝙤𝙧
             </h6>
             <p>
-              Bella Vitage stands out as a premier Korean skincare brand due to its unwavering commitment to quality, innovation, and results
+              Decor stands out as a premium brand due to its unwavering commitment to quality, innovation, and results
             </p>
           </div>
           <!-- Grid column -->
@@ -109,7 +109,7 @@
     <!-- Section: Links  -->
   
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color:#D78976; color: white;">
+    <div class="text-center p-4" style="background-color:#979797; color: white;">
       © 2023 𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 | 𝘿𝙚𝙘𝙤𝙧</div>
     <!-- Copyright -->
   </footer>

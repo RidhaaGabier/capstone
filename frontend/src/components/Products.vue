@@ -9,8 +9,8 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ product.ProdName}}</h5>
                   <p class="card-text">{{ product.Category}}</p>
-                  <p class="card-text">{{ product.Amount }}</p>
-               <router-link :to ="{name: 'product', params: {id: product.ProdID}}">See more</router-link>
+                  <p class="card-text">R {{ product.Amount }}</p>
+               <router-link class="btn" :to ="{name: 'product', params: {id: product.ProdID}}">See more</router-link>
                 </div>
               </div>
             </div>
@@ -63,6 +63,43 @@ export default {
     }
 }
 </script>
-<style lang="">
+<style scoped>
     
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.card .card-img-top{
+   border-radius:4px;
+   transition: 0.9s;
+}
+
+.card:hover .card-img-top{
+  transform:scale(1.2);
+  border-top-right-radius:50px;
+  border-top-left-radius:50px;
+  margin-bottom: 1rem;
+}
+.card{
+   width:100%;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+.btn{
+  color: black!important;
+  text-decoration: none;
+  background: #918989af;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+ font-weight: 500;
+}
+.btn:hover{
+  background: #918989af;
+  box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#CCC5B9 !important;
+}
 </style>

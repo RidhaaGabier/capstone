@@ -19,12 +19,12 @@ export default {
 
 circle {
  fill: none;
- stroke: hsl(197, 75%, 49%);
+ stroke: hsl(197, 86%, 52%);
  stroke-width: 2;
  stroke-dasharray: 1, 200;
  stroke-dashoffset: 0;
  stroke-linecap: round;
- animation: dash4 1.5s ease-in-out infinite;
+ animation: dash4 1.7s ease-in-out infinite;
 }
 
 @keyframes rotate4 {

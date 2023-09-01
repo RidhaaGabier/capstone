@@ -101,15 +101,18 @@
               </div>
             </section>
             <Products/>
+            <Carousel/>
    
   </div>
 </template>
 <script>
 import Products from '@/components/Products.vue';
+import Carousel from '@/components/Carousel.vue'
 
 export default {
   components:{
     Products,
+    Carousel,
   },
   mounted() {
         this.$store.dispatch('fetchProducts');
