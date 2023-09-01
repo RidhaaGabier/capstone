@@ -242,6 +242,8 @@ body {
   position:relative;
   overflow:hidden;
 }
+
+/* this is the transition code */
 .card .content .back{
   position:absolute;
   width:100%;
@@ -385,4 +387,6 @@ details{
 details summary{
    outline: none;
 }
+/* carousel */
+
 </style>

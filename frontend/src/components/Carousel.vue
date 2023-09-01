@@ -248,7 +248,7 @@ export default {
   left: 20px !important;
   top: 50% !important;
   font-size: 20px !important;
-  color: #8f7e18 !important;
+  color: rgba(0, 0, 0, 0.676) !important;
   line-height: 30px !important;
   margin-top: -15px !important;
 }
@@ -305,5 +305,8 @@ span {
 #carouselExampleIndicators {
   margin-top: 10rem !important;
   justify-content: center !important;
+}
+.line-heading{
+  text-align: center;
 }
 </style>

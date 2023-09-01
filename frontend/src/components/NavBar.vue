@@ -22,6 +22,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="navbar" class="navbar-nav ms-auto mb-2 mb-lg-0">
+       
           <li id="fade-in"><router-link to="/">Home</router-link></li>
     
           <li class="move" id="fade-in">
@@ -30,9 +31,11 @@
           <li class="move" id="fade-in">
             <router-link to="/about">About</router-link>
           </li>
-          <li class="move" id="fade-in">
+          <li class="move l" id="fade-in">
             <router-link to="/contact">Contact</router-link>
           </li>
+          
+          
           <li id="fade-in">
             <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
@@ -121,6 +124,12 @@ export default {
     position: absolute;
     bottom: -4px;
     left: 20px;
+  }
+
+  @media screen and (width>1000px) {
+    .l{
+  margin-right: 25rem;
+} 
   }
 
   .navbar-logo{
