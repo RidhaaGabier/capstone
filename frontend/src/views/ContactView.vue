@@ -8,106 +8,125 @@
                  <a href="#" class="btn shadow__btn mb-2">Home<i class="fa-regular fa-greater-than">Contact</i></a>
                 </div>
               </section>
+  
 
-              <div style="background-color:red ;">
+                <!----featured info-->
+                <section id="featured" class="mt-3 text-center">
+                  <div class="container">
+                  <h2 class="text-black">Get In Touch With Decor</h2>
+                  <p class="text-black text-justify">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
+                  </div>
+                </section>
+                <!--categories--->
+              
+                <!-- contact -->
+                <div class="contact-container">
+                <div class="contact-details">
+                <h2>Contact Details</h2>
+                <p><i class="fa-solid fa-business-time"></i> <strong>Business Name:</strong> Decor</p>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> 122 Main Street, Cape Town, South Africa</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> (021) 954-7890</p>
+                <p><i class="fa-regular fa-envelope"></i> <strong>Email:</strong> Decor@gmail.com</p>
+                <p><i class="fa-solid fa-clock"></i> <strong>Working Time:</strong> Monday-Friday 9:00-22:00 <br><span style="margin-left: 1.3rem;">Saturday-Sunday 9:00-21:00</span></p>
+                </div>
 
-              </div>
-    <!----featured info-->
-                <section id="featured" class="mt-3">
-                <div>
-                  <h2 class="text-black">Popular Categories</h2>
-                  <p class="text-black">We have a Featured Collection available for Men and Women.</p>
+                <div class="contact-form">
+                <form action="https://formspree.io/f/xknayqyj" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Kindly enter your name" required >
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Kindly enter your email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Kindly enter your design" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="We appreciate your feedback" required></textarea>
+
+                <button type="submit">Submit</button>
+                </form>
                 </div>
-              </section>
-      <!--categories--->
-      <div class="container mb-4">
-          <div class="row">
-            <div class="column">
-              <div class="card">
-                <div class="content">
-                  <div class="front">
-                    <img class="profile" width="100%" src="https://i.postimg.cc/dVfZFzTs/adicane-clog-men.jpg">
-                    <h2 class="mt-4 text-white">Sandals</h2>
-                  </div>
-                  <div class="back from-left">
-                    <p class="des fw-semibold p-2">
-                    Shop quality summer shoes for both men and women.
-                    </p>
-                    <button class="shadow__btn">
-                      <a href="/products" >Shop Now!</a>
-                    </button>
-                  </div>
                 </div>
-            </div>
-          </div>
-            <div class="column">
-              <div class="card">
-                <div class="content">
-                  <div class="front">
-                    <img class="profile" width="100%" src="https://i.postimg.cc/MZYcHcjr/manola-court-heel.jpg">
-                    <h2 class="mt-4 text-white">Formal</h2>
-                  </div>
-                  <div class="back from-bottom">
-                    <p class="des fw-semibold p-2">
-                      Shop quality formal shoes to complete your look!
-                    </p>
-                    <button class="shadow__btn">
-                      <a href="/products" >Shop Now!</a>
-                    </button>
-                  </div>
+                <!-- contact -->
+
+
+
+
+
+                <div class="Sponsors">
+
+                <div class="trophy">
+                <i class="fa-solid fa-trophy"></i>
+                <h2 class="text-sponsor">High quality</h2>
+                <p class="sponsors-law">Crafted from top materials</p>
                 </div>
-              </div>
-            </div>
-          <div class="column">
-            <div class="card">
-              <div class="content">
-                <div class="front">
-                  <img class="profile" width="100%" src="https://i.postimg.cc/zBrBX5Dr/zig-dynamica-men.jpg" >
-                  <h2 class="mt-4 text-white">Sneakers</h2>
+
+                <div class="tick">
+                <i class="fa fa-check-circle" style="font-size:20px"></i>
+                <h2 class="text-sponsor">Warranty Protection</h2>
+                <p class="sponsors-law">For Over 2 Years</p>
                 </div>
-                <div class="back from-right">
-                  <p class="des fw-semibold p-2">
-                  Shop the best quality and step up your shoe drip!
-                  </p>
-                  <button class="shadow__btn">
-                    <a href="/products">Shop Now!</a>
-                    </button>
+
+                <div class="shipping">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h2 class="text-sponsor">Free Shipping</h2>
+                <p class="sponsors-law">Orders Over R1000</p>
                 </div>
-              </div>
-            </div>
-          </div>
-         </div>
-      </div>
-                 <!--FAQs-->
-                 <section id="featured" class="mt-3">
-                <div>
-                  <h2 class="text-black">Frequently Asked Questions</h2>
-                  <p class="text-black">Know more about our conditions.</p>
+
+                <div class="shipping">
+                <i class="fa-solid fa-headset"></i>
+                <h2 class="text-sponsor">24 / 7 Support</h2>
+                <p class="sponsors-law">Dedicated Support</p>
                 </div>
-              </section>
-            <!-- <div class="box">
-                  <p class="heading">FAQs</p>
-                  <div class="faqs">
-                      <details>
-                        <summary class="fw-bold text-black">Discount</summary>
-                        <p class="text mt-2 fw-semibold text-black info"> If you buy more than 2 items over R600 , you get a 10% discount on the total price.</p>
-                      </details>
-                      <details>
-                        <summary class="fw-bold text-black">Online Payments</summary>
-                        <p class="text mt-2 fw-semibold text-black info">We offer various payment methods for prepaid to paying via monthly installlments.</p>
-                      </details>
-                      <details>
-                        <summary class="fw-bold text-black">Delivery</summary>
-                        <p class="text mt-2 fw-semibold text-black info"> We deliver in 3-5 business days and offer free delivery for purchases over R500.</p>
-                      </details>
-                  </div>
-            </div> -->
+
+
+                </div>
+
+  
+   
+      
     </div>
   </template>
   <script>
   // @ is an alias to /src
-  export default {
+  export default { 
+    methods:{
+      validateForm() {
+      let isValid = true;
+
+      if (!this.name) {
+        this.errors.name = 'Name is required';
+        isValid = false;
+      } else {
+        this.errors.name = ' You have not entered your name';
+      }
+
+      if (!this.email) {
+        this.errors.email = 'Email is required';
+        isValid = false;
+      } else if (!this.isValidEmail(this.email)) {
+        this.errors.email = 'Invalid email format';
+        isValid = false;
+      } else {
+        this.errors.email = 'You are missing your email';
+      }
+
+      if (!this.message) {
+        this.errors.message = 'Message is required';
+        isValid = false;
+      } else {
+        this.errors.message = 'We need feedback';
+      }
+
+      return isValid;
+    },
+    isValidEmail(email) {
+      // Implement your email validation logic
+    }
   }
+};
+    
   </script>
   <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=REM:wght@200&display=swap');
@@ -326,5 +345,120 @@
   details summary{
      outline: none;
   }
+
+  /* Contact css */
+  #featured, h2, p{
+    font-family: 'REM', sans-serif;
+}
+
+.text-black{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3rem;
+  
+}
+
+.text-blacks{
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px;
+        }
+
+        .contact-form {
+            /* background-color: #ffffff; */
+            padding: 30px;
+            border-radius: 8px;
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+            width: 40%;
+        }
+
+        .contact-details {
+            /* background-color: #ffffff; */
+            padding: 30px;
+            border-radius: 8px;
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+            width: 40%;
+            margin-left: 20px;
+        }
+
+        .contact-form h2,
+        .contact-details h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label,
+        .contact-details p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+          background: #B88E2F;
+            color: #fff;
+            padding: 10px 70px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color:#B88E2F ;
+            box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#FFF3E3;
+
+        }
+
+        .Sponsors {
+  display: flex;
+  justify-content: space-between;
+}
+.text-sponsor{
+  font-size: 26px;
+  color: black;
+}
+.sponsors-law{
+  color: black;
+  font-size: 16px;
+}
+
+.Sponsors div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Sponsors div i {
+  font-size: 20px;
+  margin-bottom: 8px; /* Adjust spacing between icon and text */
+}
+
+  .Sponsors{
+    background: #E9D5B7;
+    padding:20px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+   
+  }
+  
+
+
+  /* end of contact css */
   </style>
   

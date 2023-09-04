@@ -12,96 +12,91 @@
             <div style="background-color:#F9F1E7; padding: 1.1rem; color: black; text-align: center;">
               <h3>What We Stand For</h3>
             </div>
-  <!----featured info-->
-              <section id="featured" class="mt-3">
-              <div>
-                <h2 class="text-black">Popular Categories</h2>
-                <p class="text-black">We have a Featured Collection available for Men and Women.</p>
-              </div>
-            </section>
-    <!--categories--->
-    <div class="container mb-4">
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <div class="content">
-                <div class="front">
-                  <img class="profile" width="100%" src="https://i.postimg.cc/dVfZFzTs/adicane-clog-men.jpg">
-                  <h2 class="mt-4 text-white">Sandals</h2>
-                </div>
-                <div class="back from-left">
-                  <p class="des fw-semibold p-2">
-                  Shop quality summer shoes for both men and women.
-                  </p>
-                  <button class="shadow__btn">
-                    <a href="/products" >Shop Now!</a>
-                  </button>
-                </div>
-              </div>
-          </div>
-        </div>
-          <div class="column">
-            <div class="card">
-              <div class="content">
-                <div class="front">
-                  <img class="profile" width="100%" src="https://i.postimg.cc/MZYcHcjr/manola-court-heel.jpg">
-                  <h2 class="mt-4 text-white">Formal</h2>
-                </div>
-                <div class="back from-bottom">
-                  <p class="des fw-semibold p-2">
-                    Shop quality formal shoes to complete your look!
-                  </p>
-                  <button class="shadow__btn">
-                    <a href="/products" >Shop Now!</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <div class="column">
-          <div class="card">
-            <div class="content">
-              <div class="front">
-                <img class="profile" width="100%" src="https://i.postimg.cc/zBrBX5Dr/zig-dynamica-men.jpg" >
-                <h2 class="mt-4 text-white">Sneakers</h2>
-              </div>
-              <div class="back from-right">
-                <p class="des fw-semibold p-2">
-                Shop the best quality and step up your shoe drip!
-                </p>
-                <button class="shadow__btn">
-                  <a href="/products">Shop Now!</a>
-                  </button>
-              </div>
-            </div>
-          </div>
-        </div>
-       </div>
+            
+
+           <!-- image and description -->
+            <div class="centered">
+    <img class="about-img" src="https://i.postimg.cc/50hjWjNN/fur3.jpg" alt="Your Image Description">
+    <div class="icon-container">
+        <p class="icon"><i class="fas fa-solid fa-eye"></i> ¹⁰⁰⁰</p>
+        <p class="icon"><i class="fas fa-solid fa-calendar-days"></i>  ¹⁴/ᴼᶜᵗ/²⁰²³</p>
+        <p class="icon"><i class="fas fa-solid fa-tag"></i> ᵂᵒᵒᵈ</p>
     </div>
-               <!--FAQs-->
-               <section id="featured" class="mt-3">
-              <div>
-                <h2 class="text-black">Frequently Asked Questions</h2>
-                <p class="text-black">Know more about our conditions.</p>
-              </div>
-            </section>
-          <!-- <div class="box">
-                <p class="heading">FAQs</p>
-                <div class="faqs">
-                    <details>
-                      <summary class="fw-bold text-black">Discount</summary>
-                      <p class="text mt-2 fw-semibold text-black info"> If you buy more than 2 items over R600 , you get a 10% discount on the total price.</p>
-                    </details>
-                    <details>
-                      <summary class="fw-bold text-black">Online Payments</summary>
-                      <p class="text mt-2 fw-semibold text-black info">We offer various payment methods for prepaid to paying via monthly installlments.</p>
-                    </details>
-                    <details>
-                      <summary class="fw-bold text-black">Delivery</summary>
-                      <p class="text mt-2 fw-semibold text-black info"> We deliver in 3-5 business days and offer free delivery for purchases over R500.</p>
-                    </details>
-                </div>
-          </div> -->
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <h2>Going all-in with millennial design</h2>
+                <p class="about-prod" >Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
+            </div>
+
+
+            <div class="centered">
+    <img class="about-img" src="https://i.postimg.cc/2SJpY8SG/fur7.jpg" alt="Your Image Description">
+    <div class="icon-container">
+        <p class="icon"><i class="fas fa-solid fa-eye"></i> ¹²⁵⁰⁰</p>
+        <p class="icon"><i class="fas fa-solid fa-calendar-days"></i>  ²³/ᴺᵒᵛ/²⁰²³</p>
+        <p class="icon"><i class="fas fa-solid fa-tag"></i> ᴹᵒᵈᵉʳⁿ</p>
+    </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <h2>Exploring new ways of decorating</h2>
+                <p class="about-prod" >Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
+            </div>
+
+
+            <div class="centered">
+    <img class="about-img" src="https://i.postimg.cc/3RzWDH1F/traditional.jpg" alt="Your Image Description">
+    <div class="icon-container">
+        <p class="icon"><i class="fas fa-solid fa-eye"></i> 16750</p>
+        <p class="icon"><i class="fas fa-solid fa-calendar-days"></i>  ¹⁹/ᴰᵉᶜ/²⁰²³</p>
+        <p class="icon"><i class="fas fa-solid fa-tag"></i> ᴰᵉˢᶦᵍⁿ</p>
+    </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <h2>Handmade piece's that took time  </h2>
+                <p class="about-prod">Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
+            </div>
+       
+<!-- End of image and description -->
+           
+
+         
+
+            
+
+         
+
+            <div class="Sponsors">
+
+            <div class="trophy">
+              <i class="fa-solid fa-trophy"></i>
+              <h2 class="text-sponsor">High quality</h2>
+              <p class="sponsors-law">Crafted from top materials</p>
+            </div>
+
+            <div class="tick">
+              <i class="fa fa-check-circle" style="font-size:20px"></i>
+              <h2 class="text-sponsor">Warranty Protection</h2>
+              <p class="sponsors-law">For Over 2 Years</p>
+            </div>
+
+            <div class="shipping">
+              <i class="fa-solid fa-truck-fast"></i>
+              <h2 class="text-sponsor">Free Shipping</h2>
+              <p class="sponsors-law">Orders Over R1000</p>
+            </div>
+
+            <div class="shipping">
+              <i class="fa-solid fa-headset"></i>
+              <h2 class="text-sponsor">24 / 7 Support</h2>
+              <p class="sponsors-law">Dedicated Support</p>
+            </div>
+
+
+            </div>
+            
+   
+       
   </div>
 </template>
 <script>
@@ -117,6 +112,14 @@ body{
 .popular{
   background-color:  #F7D069;
 }
+
+
+.about-prod {
+  text-align: justify;
+  max-width: 490px; /* Adjust the maximum width as needed */
+  margin: auto; /* Center the text horizontally */
+}
+
     .hero {
 width: 100vw;
 height: 60vh;
@@ -326,4 +329,95 @@ details{
 details summary{
    outline: none;
 }
+
+
+/* about styles */
+.Sponsors {
+  display: flex;
+  justify-content: space-between;
+}
+.text-sponsor{
+  font-size: 26px;
+  color: black;
+}
+.sponsors-law{
+  color: black;
+  font-size: 16px;
+}
+
+.Sponsors div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Sponsors div i {
+  font-size: 20px;
+  margin-bottom: 8px; /* Adjust spacing between icon and text */
+}
+
+  .Sponsors{
+    background: #E9D5B7;
+    padding:20px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+   
+  }
+  
+
+.text-black{
+  text-align: center;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 3rem;
+  
+}
+
+.text-blacks{
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 20px;
+}
+
+#featured, h2, p{
+    font-family: 'REM', sans-serif;
+}
+
+.bold-text{
+  font-weight: 700;
+  font-size: 40px;
+  color: black;
+}
+
+.about-img{
+  border-radius: 4px;
+}
+
+
+
+
+.centered {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.about-img {
+    width: 500px;
+    height: 360px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 16px;
+    margin: 0 20px;
+    
+}
+/* end about styles */
 </style>

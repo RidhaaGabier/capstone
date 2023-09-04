@@ -118,12 +118,12 @@ export default {
   #navbar li a.router-link-exact-active::after,
   #navbar li a:hover::after {
     content: "";
-    width: 56%;
+    width: 57%;
     height: 1px;
     background: rgba(0, 0, 0, 0.43) !important;
     position: absolute;
-    bottom: -4px;
-    left: 20px;
+    bottom: -2px;
+    left: 23px;
   }
 
   @media screen and (width>1000px) {

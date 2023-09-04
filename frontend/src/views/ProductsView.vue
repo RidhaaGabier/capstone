@@ -35,8 +35,146 @@
               </div> 
 
           <Products/>
+
+
+          <section id="featured" class="mt-3">
+              <div>
+                <h2 class="text-black">Most Bought Products</h2>
+                <p class="text-blacks">Our Customers Suggestions Matter.</p>
+              </div>
+            </section>
+
+
+          <div class="con-carousel">
+
+
+    <div class="flexed-carousel-container">
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <div id="carouselExampleIndicators" class="carousel slide mb-5 mt-5" data-bs-ride="carousel">
+              <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide mb-2 mt-2"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://i.postimg.cc/2SJpY8SG/fur7.jpg"
+              class="d-block w-60 mx-auto"
+              style="height: 500px; width: 500px"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://i.postimg.cc/3RzWDH1F/traditional.jpg"
+              class="d-block w-60 mx-auto"
+              style="height: 500px; width: 500px" 
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://i.postimg.cc/50hjWjNN/fur3.jpg"
+              class="d-block w-60 mx-auto"
+              style="height: 500px; width: 500px"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+    </div> 
+            </div>
+        </div>
+
+        <!-- Text Container -->
+        <div class="text-container">
+            <!-- Add your text content here -->
+            <h2 class="bold-text">50+ Beautiful <br> rooms inspiration</h2>
+            <p class="desc-carousel">Our designer already made a lot of <br> beautiful prototipe of rooms <br>that inspire you</p>
+            <button class="btn"><a href="#"></a>Explore More</button>
+        </div>
+        
+      
+      </div>
+  
+
+      </div>
+      <div class="Sponsors">
+
+        <div class="trophy">
+          <i class="fa-solid fa-trophy"></i>
+          <h2 class="text-sponsor">High quality</h2>
+          <p class="sponsors-law">Crafted from top materials</p>
+        </div>
+
+        <div class="tick">
+          <i class="fa fa-check-circle" style="font-size:20px"></i>
+          <h2 class="text-sponsor">Warranty Protection</h2>
+          <p class="sponsors-law">For Over 2 Years</p>
+        </div>
+
+        <div class="shipping">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h2 class="text-sponsor">Free Shipping</h2>
+          <p class="sponsors-law">Orders Over R1000</p>
+        </div>
+
+        <div class="shipping">
+          <i class="fa-solid fa-headset"></i>
+          <h2 class="text-sponsor">24 / 7 Support</h2>
+          <p class="sponsors-law">Dedicated Support</p>
+        </div>
+
+
+      </div>
              
     </div>
+    
   </template>
   <script>
   import Products from '@/components/Products.vue';
@@ -57,15 +195,114 @@
   </script>
   <style scoped>
 
+.Sponsors {
+  display: flex;
+  justify-content: space-between;
+}
+.text-sponsor{
+  font-size: 26px;
+  color: black;
+}
+.sponsors-law{
+  color: black;
+  font-size: 16px;
+}
+
+.Sponsors div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Sponsors div i {
+  font-size: 20px;
+  margin-bottom: 8px; /* Adjust spacing between icon and text */
+}
+
+  .Sponsors{
+    background: #E9D5B7;
+    padding:20px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+   
+  }
+  
+
+.text-black{
+  text-align: center;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 3rem;
+  
+}
+
+.text-blacks{
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 20px;
+}
+
+#featured, h2, p{
+    font-family: 'REM', sans-serif;
+}
+
+.bold-text{
+  font-weight: 700;
+  font-size: 40px;
+  color: black;
+}
+
+.desc-carousel{
+  font-size: 22px;
+}
+
+  .btn{
+    padding: 10px;
+    background: #B88E2F;
+  box-shadow: 0 0 25px #FFF3E3;
+  }
+
+  .mt-5{
+    margin: 0 !important;
+  }
+  .mb-5{
+    margin: 0;
+  }
+
+
+       /* Create a flex container for the carousel and text */
+       .flexed-carousel-container {
+            display: flex ;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the carousel and text containers */
+        .carousel-container,
+        .text-container {
+            flex: 0 0 calc(30% - 50px); /* Adjust the width as needed */
+            margin: 10px; /* Add some spacing between the containers */
+        }
+        .text-container{
+          margin-left: 6rem;
+        }
+
+  .con-carousel{
+    background: #E9D5B7;
+    padding: 5px;
+  }
+
 
 .sort-filter-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #F9F1E7;
-  padding: 10px;
+  padding: 13px;
   /* border-radius: 2px; */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter-container,
