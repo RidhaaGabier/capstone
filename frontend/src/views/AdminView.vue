@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <h1>Product List</h1>
+        <h1 class="text-black">Product List</h1>
     <table>
         <thead>
             <tr>
@@ -70,4 +70,10 @@ export default {
         .delete-btn {
             background-color: #DC3545;
         }
+        .text-black{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3rem;
+  
+}
 </style>

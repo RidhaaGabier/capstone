@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-const Poki ='https://capstone-8rni.onrender.com/';
+const Poki = 'https://capstone-8rni.onrender.com/';
 
 export default createStore({
   state: {
@@ -54,9 +54,9 @@ export default createStore({
     },
     async fetchProduct(context, id) {
       try {
-        let response = await fetch(`${Poki}products/${id}`);
-        let results = await response.json();
-        context.commit("SET_PRODUCT", results);
+        let response = await fetch(`${Poki}product/${id}`);
+        let {result} = await response.json();
+        context.commit("SET_PRODUCT", result[0]);
       } catch (error) {
         alert(error.message);
       }

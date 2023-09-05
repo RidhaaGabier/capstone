@@ -2,14 +2,14 @@
   <div>
       <div class="container-fluid">
     <div class="row gap-3 justify-content-center" v-if="product"  :key="product.ProdID" :product="product">
-      <div  >
-        <div style="width:100%;height:100%;" class="card">
+      <div class=" text-center" >
+        <div style="width:100%;height:100%;" class="card justify-content-center">
           <img :src="product.ProdUrl" class="card-img-top" style="padding: 1.6rem;" height="550">
-          <div class="card-body">
+          <div class="card-body justify-content-center">
             <h5 class="card-title">{{ product.ProdName }}</h5>
             <p class="card-text">{{ product.Category }}</p>
             <p class="card-text">R {{ product.Amount }}</p>
-            <router-link class="btn" to ="../views/ProductsView.vue">Go Back</router-link>
+            <router-link class="btn" to="/products">Go Back</router-link>
 
           </div>
         </div>
@@ -60,6 +60,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch("fetchProduct", this.$route.params.id);
+    console.log(this.$route.params.id);
   },
   components:{SpinnerComp},
 };
@@ -90,10 +91,26 @@ text-align: center;
 font-size: 18px;
 }
 .btn{
-    padding: 10px;
+    padding: 5px;
     background: #B88E2F;
   box-shadow: 0 0 25px #FFF3E3;
+  cursor: pointer;
+  width: 7%;
+
   }
+
+  .btn:hover{
+    box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#FFF3E3;
+
+  }
+.card-img-top{
+height: 400px;
+width: 500px;
+margin: auto;
+border-radius: 30px;
+box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#FFF3E3;
+margin-top: 2rem;
+}
 
   .Sponsors {
   display: flex;
@@ -142,5 +159,6 @@ font-size: 18px;
   margin-bottom: 3rem;
   font-size: 20px;
 }
+
   </style>
   

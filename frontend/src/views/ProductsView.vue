@@ -13,28 +13,72 @@
               <div class="sort-filter-container">
               <div class="filter-container">
               <label for="filter">Filter by:</label>
-              <select id="filter">
-              <option value="all">All Items</option>
-              <option value="category1">Category 1</option>
-              <option value="category2">Category 2</option>
-              <option value="category3">Category 3</option>
+              <select id="filter" v-model="selectedCategory">
+              <option value="all" >All Items</option>
+              <option value="Maple Wood">Maple Wood</option>
+              <option value="Hickory Wood">Hickory Wood</option>
+              <option value="Pine Wood">Pine Wood</option>
+              <option value="Birch Wood">Birch Wood</option>
+              <option value="Oak Wood">Oak Wood</option>
+              <option value="Burken Wood">Burken Wood</option>
               </select>
               <labe style="margin-left:20px;">&#11820; | Showing 1-0 of 10 results</labe>
               </div>
               <div class="sort-container">
                 <label>Show </label> <label style="background-color: white; color: rgb(58, 58, 58); padding: 7px;"> 16</label>
               <label for="sort">Sort by:</label>
-              <select id="sort">
-              <option value="relevance">Relevance</option>
-              <option value="latest">Latest</option>
-              <option value="popular">Popular</option>
-              <option value="price-low">Price Low to High</option>
-              <option value="price-high">Price High to Low</option>
+              <select id="sort" v-model="sortOrder">
+              <option value="price-high">Price Low to High</option>
+              <option value="price-low">Price High to Low</option>
               </select>
               </div>
               </div> 
+   
 
-          <Products/>
+
+
+          <!-- Products -->
+          <div>
+        <div>
+        <div class="container-fluid">
+          <div class="row gap-3 justify-content-center" v-if="filteredProducts.length>0">
+            <div v-for="product of filteredProducts" :key="product.ProdID" class="col-12 col-sm-6 col-md-3 col-lg-${product.size} my-4">
+              <div style="width:100%;height:100%;" class="card">
+                <img :src="product. ProdUrl" class="card-img-top" style="padding: 0.6rem;" height="390">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.ProdName}}</h5>
+                  <p class="card-text">{{ product.Category}}</p>
+                  <p class="card-text">R {{ product.Amount }}</p>
+               <router-link class="btn_prod" :to ="{name: 'product', params: {id: product.ProdID}}">See more</router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row gap-3 justify-content-center" v-else-if="products">
+            <div v-for="product of products" :key="product.ProdID" class="col-12 col-sm-6 col-md-3 col-lg-${product.size} my-4">
+              <div style="width:100%;height:100%;" class="card">
+                <img :src="product. ProdUrl" class="card-img-top" style="padding: 0.6rem;" height="390">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.ProdName}}</h5>
+                  <p class="card-text">{{ product.Category}}</p>
+                  <p class="card-text">R {{ product.Amount }}</p>
+               <router-link class="btn_prod" :to ="{name: 'product', params: {id: product.ProdID}}">See more</router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center !important; margin-top:3rem;" v-else>
+            Loading...
+            <Spinner/>
+          </div>
+        </div>
+      </div>
+    </div>
+          <!-- End of products -->
+
+
+
+
 
 
           <section id="featured" class="mt-3">
@@ -177,20 +221,77 @@
     
   </template>
   <script>
-  import Products from '@/components/Products.vue';
-
+import Spinner from '../components/Spinner.vue';
   export default {
-    components:{
-      Products,
+
+    data(){
+       return {
+        product: null,
+            selectedProduct: null,
+            sortOrder:"price-high",
+            selectedCategory: "all", // Holds the selected category
+            filteredProducts: [], // Holds the filtered products
+            categories: ["Maple Wood", "Hickory Wood", "Pine Wood","Birch Wood","Oak Wood","Burken Wood"],
+       }
     },
-    mounted() {
-        this.$store.dispatch('fetchProducts');
+
+    methods:{
+      filter() {
+      this.filteredProducts = this.products.filter(product => {
+        if (product.Category == this.selectedCategory) {
+          return  this.selectedCategory ;
+        }
+       
+      });
     },
+    sortProducts() {
+        if (this.sortOrder === "price-high") {
+            this.filteredProducts= this.products.sort((a, b) => a.Amount - b.Amount);
+           
+        } else if (this.sortOrder === "price-low") {
+          this.filteredProducts=this.products.sort((a, b) => b.Amount - a.Amount);
+        }
+      },
+    sortPrice() {
+      this.$store.commit("sortPropertiesByPrice");
+    },
+      
+    },
+
+      watch: {
+    selectedCategory:"filter", // Call filter method when selectedCategory changes
+    sortOrder: "sortProducts" // Call sortProducts method when sortOrder changes
+},
+
+ 
     computed: {
         products() {
             return this.$store.state.products;
         },
-  }
+        
+
+      properties() {
+      return this.$store.state.properties?.filter((property) => {
+        let isMatch = true;
+        if (!property.title.toLowerCase().includes(this.search.toLowerCase())) {
+          isMatch = false;
+        }
+        if (this.area !== "All" && this.area !== property.area) {
+          isMatch = false;
+        }
+        return isMatch;
+      });
+    },
+  },
+
+  mounted() {
+        this.$store.dispatch('fetchProducts');
+    },
+
+  components:{
+     
+      Spinner,
+    },
 }
   </script>
   <style scoped>
@@ -421,30 +522,30 @@ select:hover {
     }
   }
   /* Style the counter cards */
-  .card {
+  /* .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 5px;
     text-align: center;
     background-color: black;
     border-radius:10px;
     cursor:pointer;
-  }
-  .card .profile{
+  } */
+  /* .card .profile{
      border-radius:10px;
      transition: 0.2s;
-  }
-  .card:hover .profile{
+  } */
+  /* .card:hover .profile{
     transform:scale(1.4);
     border-top-right-radius:50px;
     border-top-left-radius:50px;
-  }
-  .card .content{
+  } */
+  /* .card .content{
     width:100%;
     height:100%;
     position:relative;
     overflow:hidden;
-  }
-  .card .content .back{
+  } */
+  /* .card .content .back{
     position:absolute;
     width:100%;
     height:100%;
@@ -452,7 +553,7 @@ select:hover {
     transition:1s;
     z-index:1;
     padding:10px;
-  }
+  } */
   .from-left{
     top:0;
     left:-100%;
@@ -464,7 +565,7 @@ select:hover {
     top:100%;
     left:0;
   }
-  .card:hover .content .from-bottom {
+  /* .card:hover .content .from-bottom {
      top:0%;
   }
   .from-right{
@@ -502,7 +603,7 @@ select:hover {
     text-align:center;
     line-height:40px;
     border-radius:100%;
-  }
+  } */
   .shadow__btn {
     padding: 10px 20px;
     border: none;
@@ -519,16 +620,7 @@ select:hover {
     /* background: rgb(200,160,4); */
     color:#2c3e50
   }
-  .shadow__btn {
-    /* background: rgb(200,160,4); */
-    /* box-shadow: 0 0 25px rgb(200,160,4); */
-  }
-  .shadow__btn:hover {
-    /* box-shadow: 0 0 5px rgb(0,140,255),
-                0 0 25px rgb(200, 160, 4),
-                0 0 50px rgb(200, 160, 4),
-                0 0 100px rgb(200,160,4); */
-  }
+
   .box{
      width: 290px;
      margin: 100px auto;
@@ -566,5 +658,45 @@ select:hover {
   details summary{
      outline: none;
   }
+
+  /* Products */
+  .card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.card .card-img-top{
+   border-radius:4px;
+   transition: 0.9s;
+}
+
+.card:hover .card-img-top{
+  transform:scale(1.2);
+  border-top-right-radius:50px;
+  border-top-left-radius:50px;
+  margin-bottom: 1rem;
+}
+.card{
+   width:100%;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+.btn_prod{
+  color: black!important;
+  text-decoration: none;
+  background: #918989af;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+ font-weight: 500;
+}
+.btn_prod:hover{
+  background: #918989af;
+  box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#CCC5B9 !important;
+}
+  /* End of products */
   </style>
   
