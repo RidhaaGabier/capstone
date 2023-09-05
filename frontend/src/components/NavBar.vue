@@ -40,10 +40,10 @@
             <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/admin"><i class="fa-solid fa-magnifying-glass"></i></router-link>
+            <router-link to="/search"><i class="fa-solid fa-magnifying-glass"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/admin"><i class="fa-solid fa-cart-shopping"></i></router-link>
+            <router-link to="/checkout"><i class="fa-solid fa-cart-shopping"></i></router-link>
           </li>
         </ul>
       </div>
@@ -118,12 +118,12 @@ export default {
   #navbar li a.router-link-exact-active::after,
   #navbar li a:hover::after {
     content: "";
-    width: 57%;
+    width: 56%;
     height: 1px;
     background: rgba(0, 0, 0, 0.43) !important;
     position: absolute;
     bottom: -2px;
-    left: 23px;
+    left: 21px;
   }
 
   @media screen and (width>1000px) {

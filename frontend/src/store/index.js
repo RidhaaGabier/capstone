@@ -5,6 +5,8 @@ export default createStore({
   state: {
     products: null,
     product: null,
+    Users: null,
+    User:null,
   },
   mutations: {
     SET_PRODUCTS(state, products) {
@@ -13,6 +15,31 @@ export default createStore({
     SET_PRODUCT(state, productData) {
       state.product = productData;
     },
+    setUsers(state, users){
+      state.users = users
+    },
+    setUser(state, user){
+      state.user = user
+    },
+    setToken(state, token) {
+      state.token = token;
+    },
+    setMsg(state, msg) {
+      state.msg = msg;
+    },
+    setSpinner(state, products) {
+      state.showSpinner = products;
+    },
+    sortPropertiesByPrice: (state) => {
+      state.properties.sort((a, b) => {
+        return a.price - b.price;
+      });
+      if (!state.asc) {
+        state.properties.reverse();
+      }
+      state.asc = !state.asc;
+    },
+    
   },
   actions: {
     async fetchProducts(context) {
