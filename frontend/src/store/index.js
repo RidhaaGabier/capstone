@@ -6,8 +6,9 @@ export default createStore({
   state: {
     products: null,
     product: null,
-    Users: null,
-    User:null,
+    Users: null || JSON.parse(localStorage.getItem("user")),
+    User:null, 
+    token: null || localStorage.getItem("token"),
   },
   mutations: {
     SET_PRODUCTS(state, products) {
@@ -21,9 +22,11 @@ export default createStore({
     },
     setUser(state, user){
       state.user = user
+      localStorage.setItem("user", JSON.stringify(user));
     },
     setToken(state, token) {
       state.token = token;
+      localStorage.setItem("token", token);
     },
     setMsg(state, msg) {
       state.msg = msg;

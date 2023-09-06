@@ -40,7 +40,7 @@
             <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/search"><i class="fa-solid fa-magnifying-glass"></i></router-link>
+            <router-link to="/register"><i class="fa-solid fa-magnifying-glass"></i></router-link>
           </li>
           <li id="fade-in">
             <router-link to="/checkout"><i class="fa-solid fa-cart-shopping"></i></router-link>
