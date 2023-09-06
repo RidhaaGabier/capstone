@@ -54,16 +54,16 @@
               Products
             </h6>
             <p>
-              <a href="../views/Products.vue" class="text-reset">Modern Set</a>
+              <a href="/Products" class="text-reset">Modern Set</a>
             </p>
             <p>
-              <a href="../views/Products.vue" class="text-reset">Natural Set</a>
+              <a href="/Products" class="text-reset">Natural Set</a>
             </p>
             <p>
-              <a href="../views/Products.vue" class="text-reset">Nature Set</a>
+              <a href="/Products" class="text-reset">Nature Set</a>
             </p>
             <p>
-              <a href="../views/Products.vue" class="text-reset">Earthy Set</a>
+              <a href="/Products" class="text-reset">Earthy Set</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -75,16 +75,16 @@
               Useful Links
             </h6>
             <p>
-              <a href="../views/HomeView.vue" class="text-reset">Home</a>
+              <a href="/" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="../views/AboutView.vue" class="text-reset">About Us</a>
+              <a href="/about" class="text-reset">About Us</a>
             </p>
             <p>
-              <a href="../views/Products.vue" class="text-reset">Product</a>
+              <a href="/Products" class="text-reset">Products</a>
             </p>
             <p>
-                <a href="../views/ContactView.vue" class="text-reset">Contact</a>
+                <a href="/contact" class="text-reset">Contact</a>
               </p>
           </div>
           <!-- Grid column -->
