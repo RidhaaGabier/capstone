@@ -78,9 +78,7 @@ export default {
         return this.user?.result;
       },
       isAdmin() {
-        const role = this.result?.UserRole?.toLowerCase();
-    console.log("UserRole:", role); // Check the role value
-    return role === "admin";
+        return this.result?.UserRole?.toLowerCase() === "admin";
       },
     }
 }
