@@ -79,15 +79,16 @@ class Users{
             UserEmail : data.UserEmail,
             UserPass : data.UserPass
         }
-        const query =`
+        const query = `
         INSERT INTO users
-        SET ?
+        SET ?;
         `
         db.query(query,[data],(err)=>{
             if (err) throw err
             let token = tokenCreated(user)
             res.json({
                 status:res.statusCode,
+                token,
                 msg:"You are now registered."
             })
         })
