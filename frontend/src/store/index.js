@@ -3,14 +3,16 @@ import axios from "axios";
 import sweet from 'sweetalert'
 import { useCookies } from 'vue3-cookies';
 const {cookies} = useCookies()
-const Poki = 'https://capstone-8rni.onrender.com/';
+import router from '@/router';
+import authenticateUser from '@/services/AuthenticateUser';
+const dataUrl = 'https://capstone-8rni.onrender.com/';
 
 export default createStore({
   state: {
     products: null,
     product: null,
-    Users: null || JSON.parse(localStorage.getItem("user")),
-    User:null, 
+    users: null || JSON.parse(localStorage.getItem("user")),
+    user:null, 
     token: null || localStorage.getItem("token"),
   },
   mutations: {
@@ -51,7 +53,7 @@ export default createStore({
   actions: {
     async fetchProducts(context) {
       try {
-        let response = await fetch(`${Poki}products`);
+        let response = await fetch(`${dataUrl}products`);
         let{ results }  = await response.json();
         context.commit("SET_PRODUCTS", results);
         console.log(results)
@@ -61,7 +63,7 @@ export default createStore({
     },
     async fetchProduct(context, id) {
       try {
-        let response = await fetch(`${Poki}product/${id}`);
+        let response = await fetch(`${dataUrl}product/${id}`);
         let {result} = await response.json();
         context.commit("SET_PRODUCT", result[0]);
       } catch (error) {
@@ -94,10 +96,47 @@ export default createStore({
 
     //USER ONE
 
+    // log out
+    async logOut(context) {
+      context.commit('setUser')
+      cookies.remove('LegitUser'); //removes the cookie
+    },
+
+    // login
+    async loginUser(context, payload) {
+      try {
+        const {msg,token,result} = ( await axios.post(`${dataUrl}login`, payload)).data
+          if(result) {
+            context.commit("setUser", {result,msg});
+            cookies.set("LegitUser", {token, msg, result})
+            authenticateUser.applyToken(token)
+            sweet({
+              title: "Login",
+              text: msg,
+              icon: "success",
+              timer: 2000
+            })
+            router.push({name: 'home'})
+          }
+          else {
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 2000
+            })
+          }
+      } catch(error) {
+        context.commit("setMsg", "An error has occurred.")
+        };
+    },
+
+
+
     // register
     async registerUser(context,payload) {
       try {
-        const {msg} = ( await axios.post(`${Poki}register`, payload)).data
+        const {msg} = ( await axios.post(`${dataUrl}register`, payload)).data
           if(msg) {
             sweet({
               title: "Register",
@@ -120,9 +159,10 @@ export default createStore({
         context.commit("setMsg", "An error has occurred.")
         };
     },
+
     async fetchUsers(context) {
       try {
-        let response = await fetch(`${Poki}users`);
+        let response = await fetch(`${dataUrl}users`);
         let{ results }  = await response.json();
         context.commit("setUsers", results);
         console.log(results)
@@ -132,7 +172,7 @@ export default createStore({
     },
     async fetchUser(context, id) {
       try {
-        let response = await fetch(`${Poki}user/${id}`);
+        let response = await fetch(`${dataUrl}user/${id}`);
         let {result} = await response.json();
         context.commit("setUser", result[0]);
       } catch (error) {

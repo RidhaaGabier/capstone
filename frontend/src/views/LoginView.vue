@@ -12,16 +12,16 @@
             </div>
 
     <div class="login-form">
-      <form @submit.prevent="loginUser">
+      <form @submit.prevent="login">
         <h2 style="font-size: 28px;" class="text-black">Login :</h2>
         <p class="text-black mb-5" >Enter Details</p>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="UserEmail" placeholder="UserEmail" v-model="formData.UserEmail" required />
+          <input type="email" id="UserEmail" placeholder="UserEmail" v-model="payload.UserEmail" required />
         </div>
         <div class="form-group">
           <label for="password">Password :</label>
-          <input type="UserPass" id="UserPass" placeholder="UserPass" v-model="formData.UserPass" required />
+          <input type="password" id="UserPass" placeholder="UserPass" v-model="payload.UserPass" required />
         </div>
         <div class="register">
              <router-link to="/register">
@@ -29,7 +29,7 @@
               Register Here
           </router-link>
           </div>
-        <button type="submit">Login</button>
+        <button type="submit" class="btn">Login</button>
       </form>
     </div>
     <div class="Sponsors">
@@ -63,25 +63,34 @@
 </div>
   </template>
   
-  <script>
+<script>
+import { useCookies } from 'vue3-cookies';
+const {cookies} = useCookies()
+
   export default {
     data() {
       return {
-        formData: {
+        payload: {
           UserEmail: "",
           UserPass: "",
         },
       };
     },
-    methods: {
-    loginUser(e) {
-        e.preventDefault();
-      const payload = {
-        UserEmail: this.UserEmail,
-        UserPass: this.UserPass,
-      };
-      this.$store.dispatch("loginUser", payload);
+    computed: {
+      user() {
+        return this.$store.state.user
+      }
     },
+    methods: {
+      login() {
+      this.$store.dispatch("loginUser", this.payload);
+    }
+  },
+  beforeCreate() {
+    this.$store.dispatch('fetchUsers')
+  },
+  mounted() {
+    console.log(cookies.get('LegitUser'));
   },
   };
   </script>

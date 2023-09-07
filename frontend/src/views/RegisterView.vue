@@ -38,7 +38,7 @@
         
         <div class="form-group">
           <label for="address">User Image :</label>
-          <input type="text" id="Address" placeholder="Enter your address" v-model="payload.UserUrl" required />
+          <input type="text" id="Address" placeholder="Enter your address" v-model="payload.UserProfile" required />
         </div>
 
         <div class="form-group">
@@ -50,13 +50,13 @@
           <label for="profile-picture">Profile Picture</label>
           <profile-picture-upload v-model="payload.profilePicture" />
         </div> -->
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="UserRole">User Role :</label>
           <select id="UserRole" v-model="payload.UserRole" required>
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
-        </div>
+        </div> -->
 
         <button type="submit">Register</button>
 
@@ -104,7 +104,7 @@
           UserEmail: "",
           Address: "",
           UserPass: "",
-          UserUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png", // Should store the URL or file reference
+          UserProfile: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png", // Should store the URL or file reference
           UserRole: "user",
         },
       };

@@ -36,7 +36,8 @@
           </li>
           
           
-          <li id="fade-in">
+          
+          <li id="fade-in" v-show="isAdmin">
             <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
           <li id="fade-in">
@@ -44,6 +45,9 @@
           </li>
           <li id="fade-in">
             <router-link to="/checkout"><i class="fa-solid fa-cart-shopping"></i></router-link>
+          </li>
+          <li id="fade-in">
+            <router-link to="/checkout" @click="logOut">Log Out</router-link>
           </li>
         </ul>
       </div>
@@ -56,8 +60,29 @@
     </div>
 </template>
 <script>
+import { useCookies } from 'vue3-cookies';
+const {cookies} = useCookies()
+
 export default {
-    
+    methods: {
+      logOut() {
+        this.$store.dispatch('logOut')
+      }
+    },
+    computed: {
+      user() {
+        return this.$store.state.user ||
+        cookies.get("LegitUser")
+      },
+      result() {
+        return this.user?.result;
+      },
+      isAdmin() {
+        const role = this.result?.UserRole?.toLowerCase();
+    console.log("UserRole:", role); // Check the role value
+    return role === "admin";
+      },
+    }
 }
 </script>
 <style scoped>
