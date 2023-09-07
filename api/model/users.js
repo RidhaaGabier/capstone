@@ -1,6 +1,6 @@
 const db = require('../config')
 const {hash,compare} = require('bcrypt')
-const {tokenCreated} = require('../middleware/userauthentication')
+const {tokenCreated} = require('../middleware/userAuthentication')
 class Users{
     getUsers(req,res){
         const query =`
@@ -72,22 +72,23 @@ class Users{
         })
     }
    async register(req,res){
-        const data =req.body
-        data.UserPass = await hash(data.UserPass,15)
+        const data = req.body
+        data.UserPass = await hash(data.UserPass, 15)
         //payload
-        const user ={
+        const user = {
             UserEmail : data.UserEmail,
             UserPass : data.UserPass
         }
         const query =`
         INSERT INTO users
-        SET ?
+        SET ?;
         `
         db.query(query,[data],(err)=>{
             if (err) throw err
             let token = tokenCreated(user)
             res.json({
                 status:res.statusCode,
+                token,
                 msg:"You are now registered."
             })
         })

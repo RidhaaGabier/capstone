@@ -16,7 +16,7 @@ function verifyToken(req,res,next) {
     return verify(token,process.env.SECRET_KEY,(err,decoded)=>{
         if (err) {
             res.json({
-                msg: "Token authontication failed."
+                msg: "Token authentication failed."
             })
         }
         req.decoded =decoded
