@@ -195,18 +195,19 @@ export default createStore({
     //     alert(err);
     //   }
     // },
-    async updateProducts(payload) {
+    async updateProducts(context, payload) {
       try {
-        const response = await axios.put(`https://capstone-8rni.onrender.com/products/${payload.ProdID}`, payload);
+        const response = await axios.patch(`https://capstone-8rni.onrender.com/product/${payload.ProdID}`, payload);
         const productToEdit = response.data;
-        console.log("reached")
-
-
-        this.$store.commit("fetchProducts");
-
+        context.dispatch("fetchProducts");
+        sweet({
+          title: "Product Updated",
+          text: productToEdit.msg,
+          icon: "success",
+          timer: 2000
+        })
       } catch (error) {
         console.error(error);
-
       }
     },
     // async updateUsers() {

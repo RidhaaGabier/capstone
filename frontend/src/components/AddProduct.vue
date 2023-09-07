@@ -82,11 +82,8 @@
   </script>
 
   <style scoped>
-  .btn .btn-primary{
-    align-content: center;
-    text-align: center;
-    justify-content: space-between;
-    justify-content: center;
+  .btn{
+    background: purple;
   }
  </style>
   

@@ -34,19 +34,19 @@
             />
           </td>
           <td>
-           
+            <button
+        type="button"
+        class="btn-update"
+        data-bs-toggle="modal"
+        :data-bs-target="'#exampleModal'+product.ProdID"
+        data-bs-whatever="@mdo"
+      >
+        Update
+      </button>
             
-              <UpdateProducts :product="product"/>
-          
           </td>
           <td>
-            <button
-              @click="deleteProduct(product.ProdID)"
-              class="btn btn-dark"
-              data-bs-toggle=""
-              data-bs-target="#exampleModal"
-              data-bs-whatever=""
-            >
+            <button @click="deleteProduct(product.ProdID)" class="btn btn-dark">
               Delete
             </button>
           </td>
@@ -58,6 +58,9 @@
           </td>
         </tr>
       </tbody>
+      <div v-for="product in products">
+        <UpdateProducts :product="product" />
+      </div>
     </table>
     <div style="text-align: center !important; margin-top: 3rem" v-else>
       Loading...
@@ -219,11 +222,20 @@ img {
   cursor: pointer;
 }
 .delete-btn {
-  background-color: #dc3545;
+  background-color: #dc3545 !important
 }
 .text-black {
   text-align: center;
   font-weight: bold;
   margin-top: 3rem;
+}
+.btn{
+  background:#dc3545 ;
+}
+.btn-update{
+  background: #4F7942;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
 }
 </style>
