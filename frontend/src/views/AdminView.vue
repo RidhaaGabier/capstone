@@ -3,6 +3,7 @@
     <h1 class="text-black">Product List</h1>
     <div class="text-center">
       <AddProduct />
+      
     </div>
 
     <table v-if="products">
@@ -33,10 +34,10 @@
             />
           </td>
           <td>
-            <button @click="updateProducts(product.ProdID)">
-              <EditProView :product="product" />
-              update
-            </button>
+           
+            
+              <UpdateProducts :product="product"/>
+          
           </td>
           <td>
             <button
@@ -70,11 +71,9 @@
             <th scope="col">ID</th>
             <th scope="col">firstName</th>
             <th scope="col">lastName</th>
-            <th scope="col">userAge</th>
-            <th scope="col">Gender</th>
-            <th scope="col">userRole</th>
-            <th scope="col">emailAdd</th>
-            <th scope="col">userProfile</th>
+            <th scope="col">UserRole</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">UserProfile</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
@@ -106,6 +105,7 @@
                 data-bs-whatever=""
               >
                 Edit
+                
               </button>
             </td>
             <td>
@@ -146,6 +146,7 @@ import UpdateUser from "@/components/UpdateUser.vue";
 import AddUser from "@/components/AddUser.vue";
 import EditProfile from "@/components/EditProfile.vue";
 import AddProduct from "../components/AddProduct.vue";
+import UpdateProducts from "@/components/UpdateProducts.vue"
 
 export default {
   computed: {
@@ -172,9 +173,9 @@ export default {
     deleteProduct(id) {
       this.$store.dispatch("deleteProduct", id);
     },
-    updateProducts(id) {
-      this.$store.dispatch("updateProducts", id);
-    },
+    // updateProducts(id) {
+    //   this.$store.dispatch("updateProducts", id);
+    // },
   },
 
   components: {
@@ -183,6 +184,7 @@ export default {
     AddUser,
     AddProduct,
     EditProfile,
+    UpdateProducts,
   },
 };
 </script>

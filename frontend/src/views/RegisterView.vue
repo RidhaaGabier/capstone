@@ -11,42 +11,48 @@
               <h3>Become Part Of Our Furniture</h3>
             </div>
     <div class="registration-form">
+      
       <form @submit.prevent="registerUser">
         <h2 style="font-size: 28px;" class="text-black">Sign Up ?</h2>
         <p class="text-black mb-5">Create An Account With Us !</p>
         
         <div class="form-group">
           <label for="name">Name :</label>
-          <input type="text" id="FirstName" placeholder="Enter your name" v-model="formData.FirstName" required />
+          <input type="text" id="FirstName" placeholder="Enter your name" v-model="payload.FirstName" required />
         </div>
 
         <div class="form-group">
           <label for="LastName">Surname :</label>
-          <input type="text" id="LastName" placeholder="Enter your surname" v-model="formData.LastName" required />
+          <input type="text" id="LastName" placeholder="Enter your surname" v-model="payload.LastName" required />
         </div>
 
-        <div  class="form-group" v-if="msg === 'Email already in use'">
+        <div  class="form-group" >
           <label for="LastName">Email :</label>
-          <input type="text" id="UserEmail" placeholder="Enter your email" v-model="formData.UserEmail" required />
+          <input type="text" id="UserEmail" placeholder="Enter your email" v-model="payload.UserEmail" required />
         </div>
 
         <div class="form-group">
           <label for="address">Address :</label>
-          <input type="text" id="Address" placeholder="Enter your address" v-model="formData.Address" required />
+          <input type="text" id="Address" placeholder="Enter your address" v-model="payload.Address" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="address">User Image :</label>
+          <input type="text" id="Address" placeholder="Enter your address" v-model="payload.UserUrl" required />
         </div>
 
         <div class="form-group">
           <label for="UserPass">Password :</label>
-          <input type="password" id="UserPass" placeholder="Make a password" v-model="formData.UserPass" required />
+          <input type="password" id="UserPass" placeholder="Make a password" v-model="payload.UserPass" required />
         </div>
 
         <!-- <div class="form-group">
           <label for="profile-picture">Profile Picture</label>
-          <profile-picture-upload v-model="formData.profilePicture" />
+          <profile-picture-upload v-model="payload.profilePicture" />
         </div> -->
         <div class="form-group">
           <label for="UserRole">User Role :</label>
-          <select id="UserRole" v-model="formData.UserRole" required>
+          <select id="UserRole" v-model="payload.UserRole" required>
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
@@ -92,31 +98,31 @@
   export default {
     data() {
       return {
-        formData: {
+        payload: {
           FirstName: "",
           LastName: "",
           UserEmail: "",
           Address: "",
           UserPass: "",
-          UserUrl: "", // Should store the URL or file reference
+          UserUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png", // Should store the URL or file reference
           UserRole: "user",
         },
       };
     },
     methods: {
-    registerUser(e) {
-      e.preventDefault();
+    registerUser() {
+      // e.preventDefault();
 
-      formData = {
-        FirstName: this.FirstName,
-        LastName: this.LastName,
-        UserEmail: this.UserEmail,
-        Address: this.Address,
-        UserPass: this.UserPass,
-        UserUrl: this.UserUrl,
-        UserRole: this.UserRole,
-      };
-      this.$store.dispatch("registerUser", payload);
+      // payload = {
+      //   FirstName: this.FirstName,
+      //   LastName: this.LastName,
+      //   UserEmail: this.UserEmail,
+      //   Address: this.Address,
+      //   UserPass: this.UserPass,
+      //   UserUrl: this.UserUrl,
+      //   UserRole: this.UserRole,
+      // };
+      this.$store.dispatch("registerUser", this.payload);
     },
   },
   };

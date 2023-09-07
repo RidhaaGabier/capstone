@@ -1,5 +1,8 @@
 import { createStore } from 'vuex'
 import axios from "axios";
+import sweet from 'sweetalert'
+import { useCookies } from 'vue3-cookies';
+const {cookies} = useCookies()
 const Poki = 'https://capstone-8rni.onrender.com/';
 
 export default createStore({
@@ -90,6 +93,33 @@ export default createStore({
    
 
     //USER ONE
+
+    // register
+    async registerUser(context,payload) {
+      try {
+        const {msg} = ( await axios.post(`${Poki}register`, payload)).data
+          if(msg) {
+            sweet({
+              title: "Register",
+              text: msg,
+              icon: "success",
+              timer: 2000
+            })
+            context.dispatch('fetchUsers')
+            router.push({name: 'login'})
+          }
+          else {
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 2000
+            })
+          }
+      } catch(error) {
+        context.commit("setMsg", "An error has occurred.")
+        };
+    },
     async fetchUsers(context) {
       try {
         let response = await fetch(`${Poki}users`);
@@ -125,20 +155,20 @@ export default createStore({
     //     alert(err);
     //   }
     // },
-    // async updateProducts(payload, ProdID) {
-    //   try {
-    //     const response = await axios.patch(`https://capstone-8rni.onrender.com/products/${ProdID}`, payload);
-    //     const productToEdit = response.data;
-    //     console.log("reached")
+    async updateProducts(payload) {
+      try {
+        const response = await axios.put(`https://capstone-8rni.onrender.com/products/${payload.ProdID}`, payload);
+        const productToEdit = response.data;
+        console.log("reached")
 
 
-    //     this.$store.commit('SET_PRODUCTS', productToEdit);
+        this.$store.commit("fetchProducts");
 
-    //   } catch (error) {
-    //     console.error(error);
+      } catch (error) {
+        console.error(error);
 
-    //   }
-    // },
+      }
+    },
     // async updateUsers() {
     //   try {
     //     const response = await axios.get(`https://capstone-8rni.onrender.com/Users`);
