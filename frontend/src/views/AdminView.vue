@@ -63,14 +63,17 @@
       Loading...
       <Spinner />
     </div>
-    <h1 class="h1two">User Table:</h1>
+
+
+    <div v-if="users">
+      <h1 class="text-black">User Table:</h1>
     <div class="table-responsive" v-if="users">
       <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">firstName</th>
-            <th scope="col">lastName</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
             <th scope="col">UserRole</th>
             <th scope="col">Email Address</th>
             <th scope="col">UserProfile</th>
@@ -124,9 +127,6 @@
         </tbody>
       </table>
     </div>
-
-    <div v-if="users">
-      <p>test</p>
     </div>
     <div style="text-align: center !important; margin-top: 3rem" v-else>
       Loading...

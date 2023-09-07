@@ -37,7 +37,7 @@
           
           
           
-          <li id="fade-in" v-show="isAdmin">
+          <li id="fade-in">
             <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
           <li id="fade-in">
@@ -123,6 +123,7 @@ export default {
   #navbar li {
     padding: 0 25px;
     position: relative;
+    
   }
   /* styling for active links for the future */
   #navbar li a {
@@ -151,7 +152,7 @@ export default {
 
   @media screen and (width>1000px) {
     .l{
-  margin-right: 25rem;
+  margin-right: 14rem;
 } 
   }
 
