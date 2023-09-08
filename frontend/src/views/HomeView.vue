@@ -129,6 +129,24 @@ export default {
 body{
   overflow-x: hidden;
 }
+@media screen and (max-width: 500px){
+  .text{
+ font-size: 10px;
+  }
+  .heading-bold{
+font-size: 12px;
+  }
+  .shadow__btn{
+    padding: 5px !important;
+    font-size: 9px !important;
+  }
+  .hero-inner{
+    margin-right:20px !important;
+    margin-left: 90px;
+    padding: 15px !important;
+    
+  }
+}
 .popular{
   background-color:  #F7D069;
 }

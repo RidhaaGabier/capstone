@@ -1,159 +1,153 @@
 <template>
-    <div>
-      <div class="container flex-container" v-if="user">
-
-        <label for="UserID">UserID</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="UserID"
-          name="UserID"
-          v-model="user.UserID"
-          :placeholder="user.UserID"
-        />
-
-
-        <label for="FirstName">Name</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="FirstName"
-          name="FirstName"
-          v-model="user.FirstName"
-          :placeholder="user.FirstName"
-        />
-        <label for="LastName">Surname</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="LastName"
-          name="LastName"
-          v-model="user.LastName"
-          :placeholder="user.LastName"
-        />
-  
-        <label for="Address">Address</label>
-        <input
-          type="number"
-          autocomplete="off"
-          required
-          id="Address"
-          name="userAge"
-          v-model="user.Address"
-          :placeholder="user.Address"
-        />
-  
-        <label for="UserRole">UserRole</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="UserRole"
-          name="Gender"
-          v-model="user.UserRole"
-          :placeholder="user.UserRole"
-        />
-  
-        <label for="userRole">UserEmail</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="UserEmail"
-          name="UserEmail"
-          v-model="user.UserEmail"
-          :placeholder="user.UserEmail"
-        />
-        <label for="UserPass">UserPass</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="UserPass"
-          name="UserPass"
-          v-model="user.UserPass"
-          :placeholder="user.UserPass"
-        />
-  
-        <label for="UserProfile">UserProfile</label>
-        <input
-          type="text"
-          autocomplete="off"
-          required
-          id="UserProfile"
-          name="UserProfile"
-          v-model="user.UserProfile"
-          :placeholder="user.UserProfile"
-        />
-  
-        <button @click="updateUser" class="btn-submit">Submit</button>
+  <div
+    class="modal fade"
+    :id="'exampleModal' + user.UserID"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabelinfo"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabelinfo">{{ user.FirstName }}</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form @submit.prevent="updateUser">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.UserName"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Surname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.LastName"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Role</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.UserRole"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.UserEmail"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Password</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.UserPass"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.Address"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Profile</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-na"
+                autocomplete="off"
+                required
+                v-model="user.UserProfile"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            @click="updateUser"
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </div>
-  </template>
-  
-  <script>
-  import axios from "axios";
-  
-  export default {
-    data() {
-      return {
-        FirstName: "",
-        LastName: "",
-        Address: "",
-        UserRole: "",
-        UserPass: "",
-        UserEmail: "",
-        UserProfile: "",
-        UserID: "",
-      };
+  </div>
+  <!-- </div> -->
+</template>
+<script>
+export default {
+  name: "updateUsersComp",
+  props: ["user"],
+  data() {
+    return {
+      // product: {
+      // // Make sure to include a prop for prodID or remove it if not needed
+      //   ProdName: '',
+      //   Quantity: '',
+      //   Amount: '',
+      //   Category: '', // 'category' should be 'Category' to match the v-model
+      //   ProdUrl: '',
+      // }
+    };
+  },
+  methods: {
+    updateUser() {
+      this.$store.dispatch("updateUsers", this.user);
     },
-    methods: {
-      async updateUser() {
-        try {
-          await axios.put(
-            `https://capstone-8rni.onrender.com/user/${this.$route.params.id}`,
-            {
-              firstName: this.user.FirstName,
-              lastName: this.user.LastName,
-              Address: this.user.Address,
-              UserRole: this.user.UserRole,
-              UserPass: this.user.UserPass,
-              UserEmail: this.user.UserEmail,
-              UserProfile: this.user.UserProfile,
-              UserID: this.user.UserID,
-            }
-          );
-          this.FirstName = "";
-          this.LastName = "";
-          this.Address = "";
-          this.UserRole = "";
-          this.UserPass = "";
-          this.UserEmail = "";
-          this.UserProfile = "";
-          this.UserID = "";
-  
-          this.$router.push("/admin");
-        } catch (err) {
-          console.log(err);
-        }
-      },
-    },
-    props: ["id"],
-    computed: {
-      user() {
-        return this.$store.state.user;
-      },
-    },
-    mounted() {
-      this.$store.dispatch("getUser", this.id), this.$store.dispatch("getUsers");
-    },
-  };
-  </script>
-  
-  <style scoped>
-
-  </style>
-  
+  },
+};
+</script>
+<style scoped>
+.btn .btn-primary {
+  align-content: center;
+  text-align: center;
+  justify-content: space-between;
+  justify-content: center;
+}
+</style>

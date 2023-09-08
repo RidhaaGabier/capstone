@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { useCookies } from 'vue3-cookies';
 const {cookies} = useCookies()
+import store from "@/store"
 
 const routes = [
   {
@@ -58,6 +59,28 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach(async (to, from) => {
+  console.log(store.state)
+  if (
+    // make sure the user is authenticated
+    !store.state.user &&
+    // ❗️ Avoid an infinite redirect
+    to.name === 'home'
+  ) {
+    // redirect the user to the login page
+    return { name: 'checkout' }
+  }
+  else if(
+    // make sure the user is authenticated
+    store.state.user &&
+    // ❗️ Avoid an infinite redirect
+    to.name === 'checkout'
+  ) {
+    // redirect the user to the login page
+    return { name: 'home' }
+  }
 })
 
 export default router

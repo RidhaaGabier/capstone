@@ -24,7 +24,7 @@
     </div>
             </div>
             <div style="text-align: center; margin-top: 20px;">
-                <h2>Going all-in with millennial design</h2>
+                <h2 class="pic-info">Going all-in with millennial design</h2>
                 <p class="about-prod" >Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
             </div>
 
@@ -38,7 +38,7 @@
     </div>
             </div>
             <div style="text-align: center; margin-top: 20px;">
-                <h2>Exploring new ways of decorating</h2>
+                <h2 class="pic-info">Exploring new ways of decorating</h2>
                 <p class="about-prod" >Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
             </div>
 
@@ -53,7 +53,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 20px;">
-                <h2>Handmade piece's that took time  </h2>
+                <h2 class="pic-info">Handmade piece's that took time  </h2>
                 <p class="about-prod">Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
             </div>
        
@@ -111,6 +111,25 @@ body{
 }
 .popular{
   background-color:  #F7D069;
+}
+
+@media screen and (max-width: 500px){
+  .about-img{
+    width: 100% !important;
+    height: 260px !important;
+  }
+  .text-sponsor{
+    font-size: 12px !important;
+  }
+  .sponsors-law{
+    font-size: 9px !important;
+  }
+  .about-prod{
+    font-size: 12px;
+  }
+  .pic-info{
+    font-size: 19px;
+  }
 }
 
 

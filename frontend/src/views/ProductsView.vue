@@ -296,6 +296,21 @@ import Spinner from '../components/Spinner.vue';
   </script>
   <style scoped>
 
+@media screen and (max-width: 500px){
+  
+  .text-sponsor{
+    font-size: 12px !important;
+  }
+  .sponsors-law{
+    font-size: 9px !important;
+  }
+  .shadow__btn{
+    padding: 6px !important;
+    font-size: 15px !important;
+  }
+
+}
+
 .Sponsors {
   display: flex;
   justify-content: space-between;

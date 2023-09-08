@@ -67,8 +67,78 @@
       <Spinner />
     </div>
 
+    <h1 class="text-black">Users List</h1>
+    <div class="text-center">
+      <!-- <AddUser /> -->
+      <!-- addUser instead of products -->
+      
+    </div>
 
-    <div v-if="users">
+    <table v-if="users">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Role</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Address</th>
+          <th scope="col">Profile</th>
+          <th scope="col">Edit</th>
+          <th scope="co;">Delete</th>
+        </tr>
+      </thead>
+      <tbody v-for="user in users" :key="user.UserID">
+        <tr>
+          <th scope="row">{{ user.UserID }}</th>
+          <td>{{ user.FirstName }}</td>
+          <td>{{ user.LastName }}</td>
+          <td>{{ user.UserRole }}</td>
+          <td>{{ user.UserEmail }}</td>
+          <td>{{ user.UserPass }}</td>
+          <td>{{ user.Address }}</td>
+          <td>{{ user.UserProfile }}</td>
+          <td>
+            <img
+              :src="user.UserProfile"
+              :alt="user.FirstName"
+              style="width: 5rem"
+            />
+          </td>
+          <td>
+            <button
+        type="button"
+        class="btn-update"
+        data-bs-toggle="modal"
+        :data-bs-target="'#exampleModal'+user.UserID"
+        data-bs-whatever="@mdo"
+      >
+        Update
+      </button>
+            
+          </td>
+          <td>
+            <button @click="deleteUser(user.UserID)" class="btn btn-dark">
+              Delete
+            </button>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+      <div v-for="user in users">
+        <UpdateUser :user="user" />
+        <!-- have the updateUsers instead of updateProducts -->
+      </div>
+    </table>
+    <div style="text-align: center !important; margin-top: 3rem" v-else>
+      Loading...
+      <Spinner />
+    </div>
+
+
+    <!-- <div v-if="users">
       <h1 class="text-black">User Table:</h1>
     <div class="table-responsive" v-if="users">
       <table class="table">
@@ -134,7 +204,7 @@
     <div style="text-align: center !important; margin-top: 3rem" v-else>
       Loading...
       <Spinner />
-    </div>
+    </div> -->
   </div>
   <!-- <AddProducts/>
       <UpdateUser/>
@@ -175,6 +245,9 @@ export default {
   methods: {
     deleteProduct(id) {
       this.$store.dispatch("deleteProduct", id);
+    },
+    deleteUser(id) {
+      this.$store.dispatch("deleteUser", id);
     },
     // updateProducts(id) {
     //   this.$store.dispatch("updateProducts", id);

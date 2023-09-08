@@ -41,10 +41,10 @@
             <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/register"><i class="fa-solid fa-magnifying-glass"></i></router-link>
+            <router-link to="/register"><i class="fa-solid fa-user-plus"></i></router-link>
           </li>
           <li id="fade-in">
-            <router-link to="/checkout"><i class="fa-solid fa-cart-shopping"></i></router-link>
+            <router-link to="/checkout"><i class="fa-solid fa-right-to-bracket"></i></router-link>
           </li>
           <li id="fade-in">
             <router-link to="/checkout" @click="logOut">Log Out</router-link>

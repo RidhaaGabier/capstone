@@ -11,9 +11,9 @@ export default createStore({
   state: {
     products: null,
     product: null,
-    users: null || JSON.parse(localStorage.getItem("user")),
-    user:null, 
-    token: null || localStorage.getItem("token"),
+    users: null,
+    user:null,
+    token:  null,
   },
   mutations: {
     SET_PRODUCTS(state, products) {
@@ -61,11 +61,32 @@ export default createStore({
         alert(error.message);
       }
     },
+    // fetches users
+    // async fetchUsers(context) {
+    //   try {
+    //     let response = await fetch(`${dataUrl}users`);
+    //     let{ results }  = await response.json();
+    //     context.commit("setUsers", results);
+    //     console.log(results)
+    //   } catch (error) {
+    //     alert(error.message);
+    //   }
+    // },
     async fetchProduct(context, id) {
       try {
         let response = await fetch(`${dataUrl}product/${id}`);
         let {result} = await response.json();
         context.commit("SET_PRODUCT", result[0]);
+      } catch (error) {
+        alert(error.message);
+      }
+    },
+    // fetch a single user
+    async fetchUser(context, id) {
+      try {
+        let response = await fetch(`${dataUrl}user/${id}`);
+        let {result} = await response.json();
+        context.commit("setUser", result[0]);
       } catch (error) {
         alert(error.message);
       }
@@ -82,6 +103,19 @@ export default createStore({
         });
         alert("Item has been added.")
     },
+    // Adds a User
+    addUser(context,payload) {
+      axios.post("https://capstone-8rni.onrender.com/product", payload)
+        .then(response => {
+          console.log("User added:", response.data);
+          context.dispatch("fetchUsers")
+        })
+        .catch(error => {
+          console.error("Error adding user:", error);
+          alert("An error occurred while adding the user.");
+        });
+        alert("New user has been added.")
+    },
     deleteProduct(context,ProdID) {
       
          axios.delete(`https://capstone-8rni.onrender.com/product/${ProdID}`)
@@ -92,6 +126,17 @@ export default createStore({
         alert(err);
       })
     },
+    // Deletes a user
+    deleteUser(context,UserID) {
+      
+      axios.delete(`https://capstone-8rni.onrender.com/user/${UserID}`)
+      .then(response => {
+       context.dispatch("fetchUsers");
+      })
+    .catch (err => {
+     alert(err);
+   })
+ },
    
 
     //USER ONE
@@ -163,9 +208,9 @@ export default createStore({
     async fetchUsers(context) {
       try {
         let response = await fetch(`${dataUrl}users`);
-        let{ results }  = await response.json();
-        context.commit("setUsers", results);
-        console.log(results)
+        let data  = await response.json();
+        console.log(data.results)
+        context.commit("setUsers", data.results);
       } catch (error) {
         alert(error.message);
       }
@@ -210,19 +255,25 @@ export default createStore({
         console.error(error);
       }
     },
-    // async updateUsers() {
-    //   try {
-    //     const response = await axios.get(`https://capstone-8rni.onrender.com/Users`);
-    //     const productToEdit = response.data;
+    async updateUsers(context, payload) {
+      try {
+        const response = await axios.patch(`https://capstone-8rni.onrender.com/Users`, payload);
+        const UserToEdit = response.data;
 
+        context.dispatch("fetchUsers");
+        sweet({
+          title: "User Updated",
+          text: UserToEdit.msg,
+          icon: "success",
+          timer: 2000
+        })
+        context.commit('setUsers', UserToEdit);
 
-    //     this.$store.commit('setUsers', productToEdit);
+      } catch (error) {
+        console.error(error);
 
-    //   } catch (error) {
-    //     console.error(error);
-
-    //   }
-    // },
+      }
+    },
   },
  
 })

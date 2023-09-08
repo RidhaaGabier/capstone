@@ -456,6 +456,8 @@
     margin-bottom: 5rem;
    
   }
+
+  @media screen and (width>1000px){}
   
 
 
