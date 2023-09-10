@@ -2,7 +2,10 @@
   <div>
     <h1 class="text-black">Product List</h1>
     <div class="text-center">
+      <h3 class="mt-5">Add New Products</h3>
       <AddProduct />
+      
+
       
     </div>
 
@@ -30,7 +33,7 @@
             <img
               :src="product.ProdUrl"
               :alt="product.ProdName"
-              style="width: 5rem"
+              style="width: 4rem; height:4rem" 
             />
           </td>
           <td>
@@ -103,7 +106,7 @@
             <img
               :src="user.UserProfile"
               :alt="user.FirstName"
-              style="width: 5rem"
+              style="width: 4rem; height:4rem" 
             />
           </td>
           <td>

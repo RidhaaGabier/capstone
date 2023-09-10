@@ -133,6 +133,15 @@
   body{
     overflow-x: hidden;
   }
+  @media screen and (max-width: 500px){
+ 
+ .text-sponsor{
+   font-size: 12px !important;
+ }
+ .sponsors-law{
+   font-size: 9px !important;
+ }
+}
   .popular{
     background-color:  #F7D069;
   }

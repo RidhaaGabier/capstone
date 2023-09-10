@@ -27,7 +27,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.UserName"
+                v-model="user.FirstName"
               />
             </div>
             <div class="mb-3">

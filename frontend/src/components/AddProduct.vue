@@ -83,7 +83,9 @@
 
   <style scoped>
   .btn{
-    background: purple;
+    background: rgba(44, 92, 237, 0.978);
+    width: 5rem;
+    margin-bottom: 5rem;
   }
  </style>
   
