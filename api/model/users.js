@@ -4,7 +4,7 @@ const {tokenCreated} = require('../middleware/userauthentication')
 class Users{
     getUsers(req,res){
         const query =`
-        SELECT UserID, FirstName,LastName, UserEmail, UserRole, UserProfile
+        SELECT UserID, FirstName,LastName, UserEmail, UserRole, UserProfile, UserPass, Address
         FROM users;
         `
         db.query(query,(err,results)=>{
