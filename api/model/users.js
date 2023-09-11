@@ -17,7 +17,7 @@ class Users{
     }
     getUser(req,res){
         const query =`
-        SELECT UserID, FirstName,LastName, UserEmail, UserRole
+        SELECT UserID, FirstName,LastName, UserEmail, Address, UserProfile
         FROM users
         WHERE UserID = ${req.params.id};
         `
