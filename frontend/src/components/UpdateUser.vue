@@ -107,7 +107,7 @@
             Close
           </button>
           <button
-            @click="updateUser"
+            @click.prevent="updateUser"
             type="button"
             class="btn btn-primary"
             data-bs-dismiss="modal"
@@ -124,8 +124,8 @@
 export default {
   name: "updateUsersComp",
   props: ["user"],
-  data() {
-    return {
+  // data() {
+  //   return {
       // product: {
       // // Make sure to include a prop for prodID or remove it if not needed
       //   ProdName: '',
@@ -134,8 +134,17 @@ export default {
       //   Category: '', // 'category' should be 'Category' to match the v-model
       //   ProdUrl: '',
       // }
-    };
-  },
+      // user: {
+      //   FirstName: '',
+      //   LastName: '',
+      //   UserRole: '',
+      //   UserEmail: '',
+      //   UserPass: '',
+      //   Address: '',
+      //   pro
+  //     }
+  //   }
+  // }
   methods: {
     updateUser() {
       this.$store.dispatch("updateUsers", this.user);

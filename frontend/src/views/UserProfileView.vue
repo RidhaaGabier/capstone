@@ -1,16 +1,20 @@
 <template lang="">
-  <div>
-      <div class="container-fluid">
-    <div class="row gap-3 justify-content-center" v-if="product"  :key="product.ProdID" :product="product">
+    <div>
+        <div class="container-fluid">
+    <div class="row gap-3 justify-content-center" v-if="user"  :key="user.UserID" :user="user">
       <div class=" text-center" >
         <div style="width:100%;height:100%;" class="card justify-content-center">
-          <img :src="product.ProdUrl" class="card-img-top" style="padding: 1.6rem;" height="550">
+          <img :src="user.UserProfile" class="card-img-top" style="padding: 1.6rem;" height="550">
           <div class="card-body justify-content-center">
-            <h5 class="card-title">{{ product.ProdName }}</h5>
-            <p class="card-text">{{ product.Category }}</p>
-            <p class="card-text">R {{ product.Amount }}</p>
-            <router-link class="btn" to="/products">Go Back</router-link>
-            <router-link style="margin-left:2rem;" class="btn" to="/products">Add To Cart</router-link>
+            <h5 class="card-title">{{ user.FirstName }}</h5>
+            <h5 class="card-text">{{ user.LastName }}</h5>
+            <p class="card-text"> {{ user.UserEmail }}</p>
+            <p class="card-text"> {{ user.Address }}</p>
+            <!-- <p class="card-text"> {{ user.UserPass }}</p> -->
+            <p class="card-text"> {{ user.UserRole }}</p>
+
+
+            <router-link class="btn" to="/">Go Back</router-link>
 
           </div>
         </div>
@@ -21,47 +25,20 @@
       <SpinnerComp/>
     </div>
   </div>
-  <div class="Sponsors">
-
-<div class="trophy">
-  <i class="fa-solid fa-trophy"></i>
-  <h2 class="text-sponsor">High quality</h2>
-  <p class="sponsors-law">Crafted from top materials</p>
-</div>
-
-<div class="tick">
-  <i class="fa fa-check-circle" style="font-size:20px"></i>
-  <h2 class="text-sponsor">Warranty Protection</h2>
-  <p class="sponsors-law">For Over 2 Years</p>
-</div>
-
-<div class="shipping">
-  <i class="fa-solid fa-truck-fast"></i>
-  <h2 class="text-sponsor">Free Shipping</h2>
-  <p class="sponsors-law">Orders Over R1000</p>
-</div>
-
-<div class="shipping">
-  <i class="fa-solid fa-headset"></i>
-  <h2 class="text-sponsor">24 / 7 Support</h2>
-  <p class="sponsors-law">Dedicated Support</p>
-</div>
-
-
-</div>
-  </div>
+    </div>
 </template>
+
+
+
 <script>
 import SpinnerComp from '@/components/Spinner.vue';
+import { useCookies } from 'vue3-cookies';
+const {cookies} = useCookies();
 export default {
   computed: {
-    product() {
-      return this.$store.state.product;
+    user() {
+      return this.$store.state.user || cookies.get('LegitUser').result;
     },
-  },
-  mounted() {
-    this.$store.dispatch("fetchProduct", this.$route.params.id);
-    console.log(this.$route.params.id);
   },
   components:{SpinnerComp},
 };
@@ -162,4 +139,7 @@ margin-top: 2rem;
 }
 
   </style>
+
+
+ 
   

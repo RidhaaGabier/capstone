@@ -32,6 +32,10 @@
               <option value="price-low">Price High to Low</option>
               </select>
               </div>
+                <!-- <div class="search-container">
+                <label for="search">Search:</label>
+                <input type="text" id="search" v-model="search" @input="performSearch" />
+              </div> -->
               </div> 
    
 
@@ -229,6 +233,7 @@ import Spinner from '../components/Spinner.vue';
         product: null,
             selectedProduct: null,
             sortOrder:"price-high",
+            // search: "",
             selectedCategory: "all", // Holds the selected category
             filteredProducts: [], // Holds the filtered products
             categories: ["Maple Wood", "Hickory Wood", "Pine Wood","Birch Wood","Oak Wood","Burken Wood"],
@@ -268,6 +273,8 @@ import Spinner from '../components/Spinner.vue';
         products() {
             return this.$store.state.products;
         },
+
+        
         
 
       properties() {

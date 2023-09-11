@@ -40,16 +40,14 @@
   export default {
     data() {
       return {
-  
-        ProdID: '',
-        ProdName: "",
-        Quantity: "",
-        Amount: "",
-        Category: "",
-        ProdUrl: "",
-  
-        active: false
-  
+        product:{
+          ProdID: '',
+          ProdName: "",
+          Quantity: "",
+          Amount: "",
+          Category: "",
+          ProdUrl: "",
+        }  
       };
     },
     methods: {

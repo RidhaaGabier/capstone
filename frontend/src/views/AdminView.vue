@@ -72,8 +72,7 @@
 
     <h1 class="text-black">Users List</h1>
     <div class="text-center">
-      <!-- <AddUser /> -->
-      <!-- addUser instead of products -->
+
       
     </div>
 
@@ -101,7 +100,6 @@
           <td>{{ user.UserEmail }}</td>
           <td>{{ user.UserPass }}</td>
           <td>{{ user.Address }}</td>
-          <td>{{ user.UserProfile }}</td>
           <td>
             <img
               :src="user.UserProfile"
@@ -132,87 +130,15 @@
       </tbody>
       <div v-for="user in users">
         <UpdateUser :user="user" />
-        <!-- have the updateUsers instead of updateProducts -->
+ 
       </div>
     </table>
     <div style="text-align: center !important; margin-top: 3rem" v-else>
       Loading...
       <Spinner />
     </div>
-
-
-    <!-- <div v-if="users">
-      <h1 class="text-black">User Table:</h1>
-    <div class="table-responsive" v-if="users">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">FirstName</th>
-            <th scope="col">LastName</th>
-            <th scope="col">UserRole</th>
-            <th scope="col">Email Address</th>
-            <th scope="col">UserProfile</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody v-for="user in users" :key="user.UserID">
-          <tr>
-            <th scope="row">{{ user.UserID }}</th>
-            <td>{{ user.FirstName }}</td>
-            <td>{{ user.LastName }}</td>
-            <td>{{ user.Address }}</td>
-            <td>{{ user.UserPass }}</td>
-            <td>{{ user.UserRole }}</td>
-            <td>{{ user.UserEmail }}</td>
-            <td>{{ user.UserProfile }}</td>
-
-            <td>
-              <img
-                :src="user.UserProfile"
-                :alt="user.FirstName"
-                style="width: 5rem"
-              />
-            </td>
-            <td>
-              <button
-                class="edit-btn"
-                @click="updateUsers()"
-                data-bs-toggle=""
-                data-bs-target="#exampleModal"
-                data-bs-whatever=""
-              >
-                Edit
-                
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                @click="deleteUser(user.UserID)"
-                class="delete-btn"
-                data-bs-toggle=""
-                data-bs-target="#exampleModal"
-                data-bs-whatever=""
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-    <div style="text-align: center !important; margin-top: 3rem" v-else>
-      Loading...
-      <Spinner />
-    </div> -->
   </div>
-  <!-- <AddProducts/>
-      <UpdateUser/>
-      <AddUser/>
-      <EditProfile/> -->
+
 </template>
 
 <script>

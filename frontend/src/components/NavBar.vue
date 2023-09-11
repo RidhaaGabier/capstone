@@ -31,23 +31,26 @@
           <li class="move" id="fade-in">
             <router-link to="/about">About</router-link>
           </li>
-          <li class="move l" id="fade-in">
+          <li id="fade-in">
             <router-link to="/contact">Contact</router-link>
+          </li>
+          <li class="move l" id="fade-in">
+            <router-link to="/userProfile"  >User</router-link>
           </li>
           
           
-          
           <li id="fade-in">
-            <router-link to="/admin"><i class="fa-regular fa-user"></i></router-link>
+            <router-link to="/cart"><i class="fa-solid fa-cart-shopping"></i></router-link>
+          </li>
+          <li id="fade-in" v-show="isAdmin">
+            <router-link to="/admin"><i class="fa-regular fa-user"></i> Admin</router-link>
           </li>
           <li id="fade-in">
             <router-link to="/register"><i class="fa-solid fa-user-plus"></i></router-link>
           </li>
+    
           <li id="fade-in">
-            <router-link to="/checkout"><i class="fa-solid fa-right-to-bracket"></i></router-link>
-          </li>
-          <li id="fade-in">
-            <router-link to="/checkout" @click="logOut">Log Out</router-link>
+            <router-link to="/checkout" @click="logOut"><i class="fa-solid fa-right-to-bracket"></i></router-link>
           </li>
         </ul>
       </div>
