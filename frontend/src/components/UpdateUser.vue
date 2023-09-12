@@ -9,7 +9,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabelinfo">{{ userData.FirstName }}</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabelinfo">{{ user.FirstName }}</h1>
           <button
             type="button"
             class="btn-close"
@@ -27,7 +27,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.FirstName" :placeholder="user.FirstName"
+                v-model="user.FirstName"
               />
             </div>
             <div class="mb-3">
@@ -38,7 +38,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.LastName" :placeholder="user.LastName"
+                v-model="user.LastName"
               />
             </div>
             <div class="mb-3">
@@ -49,7 +49,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.UserRole" :placeholder="user.UserRole"
+                v-model="user.UserRole"
               />
             </div>
             <div class="mb-3">
@@ -60,7 +60,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.UserEmail" :placeholder="user.UserEmail"
+                v-model="user.UserEmail"
               />
             </div>
             
@@ -72,7 +72,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.UserPass" :placeholder="user.UserPass"
+                v-model="user.UserPass" 
               />
             </div>
             <div class="mb-3">
@@ -83,7 +83,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.Address" :placeholder="user.Address"
+                v-model="user.Address"
               />
             </div>
             <div class="mb-3">
@@ -94,7 +94,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="userData.UserProfile" :placeholder="user.UserProfile"
+                v-model="user.UserProfile" 
               />
             </div>
             <button
@@ -127,30 +127,12 @@ export default {
   props: ["user"],
   data() {
     return {
-      // product: {
-      // // Make sure to include a prop for prodID or remove it if not needed
-      //   ProdName: '',
-      //   Quantity: '',
-      //   Amount: '',
-      //   Category: '', // 'category' should be 'Category' to match the v-model
-      //   ProdUrl: '',
-      // }
-      userData: {
-        UserID: this.user.UserID, 
-        FirstName: null,
-        LastName: null,
-        Address: null,
-        UserPass: null,
-        UserRole: null,
-        UserEmail: null,
-        UserProfile: null
-      }
+      
     }
   },
   methods: {
     updateUser() {
-      console.log(this.userData);
-      this.$store.dispatch("updateUsers", this.userData);
+      this.$store.dispatch("updateUsers", this.user);
     },
   },
 };

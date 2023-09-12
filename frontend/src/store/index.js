@@ -172,30 +172,11 @@ async fetchUser(context, id) {
 
 
     async updateUsers(context, payload) {
-      // try {
-      //   const {msg} = (await axios.patch(`https://capstone-8rni.onrender.com/user/${payload.UserID}`, payload)).data;
-      //   if(msg) {
-
-      //     context.dispatch("fetchUsers");
-      //   }
-
-      //   sweet({
-      //     title: "User Updated",
-      //     text: UserToEdit.msg,
-      //     icon: "success",
-      //     timer: 2000
-      //   })
-      //   context.commit('setUsers', UserToEdit);
-
-      // } catch (error) {
-      //   console.error(error);
-
-      // }
       try {
-        const response = await axios.patch(`https://capstone-8rni.onrender.com/user/${payload.UserID}`, payload);
+        const response = await axios.patch(`https://capstone-8rni.onrender.com/user/${payload.UserID}`, payload); 
+        // const response = await axios.patch(`http://localhost:3000/user/${payload.UserID}`, payload); 
         const {msg} = response.data;
         if(msg) {
-
           context.dispatch("fetchUsers");
           sweet({
             title: "User Updated",

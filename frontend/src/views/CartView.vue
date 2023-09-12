@@ -29,6 +29,7 @@
             <td><img class="prod" :src="item.product.ProdUrl" alt=""></td>
             <td>R {{ item.product.Amount }}</td>
             <td>
+
               <button @click="RemoveItem(item)" class="btn btn-sm btn-secondary">-</button>
               {{ item.product.Quantity }}
               <button @click="AddItem(item)" class="btn btn-sm btn-secondary">+</button>
@@ -40,6 +41,10 @@
               </button>
             </td>
           </tr>
+          <div v-if="cart.length > 0">
+          <!-- ... Existing code for displaying cart items ... -->
+          <div class="text-black">Grand Total: R {{ grandTotal }}</div>
+        </div>
         </tbody>
       </table>
     </div>
@@ -86,6 +91,15 @@ export default {
       return item.product.Amount * item.product.Quantity;
     },
   },
+  computed: {
+  grandTotal() {
+    let total = 0;
+    for (const item of this.cart) {
+      total += this.calculateTotal(item);
+    }
+    return total;
+  },
+}
 };
 </script>
 

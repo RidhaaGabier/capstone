@@ -32,10 +32,10 @@
               <option value="price-low">Price High to Low</option>
               </select>
               </div>
-                <!-- <div class="search-container">
-                <label for="search">Search:</label>
-                <input type="text" id="search" v-model="search" @input="performSearch" />
-              </div> -->
+              <div class="search-container">
+              <label for="search">Search:</label>
+              <input type="text" id="search" v-model="search" @input="performSearch" />
+            </div>
               </div> 
    
 
@@ -236,7 +236,7 @@ import Spinner from '../components/Spinner.vue';
         product: null,
             selectedProduct: null,
             sortOrder:"price-high",
-            // search: "",
+            search: "",
             selectedCategory: "all", // Holds the selected category
             filteredProducts: [], // Holds the filtered products
             categories: ["Maple Wood", "Hickory Wood", "Pine Wood","Birch Wood","Oak Wood","Burken Wood"],
@@ -251,6 +251,17 @@ import Spinner from '../components/Spinner.vue';
         }
        
       });
+
+  //     this.filteredProducts = this.products.filter((product) => {
+    
+  //   const productNameContainsQuery = product.ProdName.toLowerCase().includes(this.search.toLowerCase());
+  //   const categoryContainsQuery = product.Category.toLowerCase().includes(this.search.toLowerCase());
+
+    
+  //   return productNameContainsQuery || categoryContainsQuery;
+  // });
+
+
     },
     sortProducts() {
         if (this.sortOrder === "price-high") {
@@ -280,12 +291,15 @@ import Spinner from '../components/Spinner.vue';
       // localStorage.setItem('cart', JSON.stringify(product))
       // console.log(localStorage.getItem('cart'));
     }
+
+    
     },
 
 
-      watch: {
-    selectedCategory:"filter", // Call filter method when selectedCategory changes
-    sortOrder: "sortProducts" // Call sortProducts method when sortOrder changes
+    watch: {
+  search: "filter", // Call the filter method when the search query changes
+  selectedCategory: "filter", // Call the filter method when the selected category changes
+  sortOrder: "sortProducts" // Call the sortProducts method when the sort order changes
 },
 
  
@@ -293,6 +307,7 @@ import Spinner from '../components/Spinner.vue';
         products() {
             return this.$store.state.products;
         },
+        
 
         
         
