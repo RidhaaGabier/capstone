@@ -10,8 +10,6 @@
             <p class="card-text">{{ product.Category }}</p>
             <p class="card-text">R {{ product.Amount }}</p>
             <router-link class="btn" to="/products">Go Back</router-link>
-            <router-link style="margin-left:2rem;" class="btn" to="/products">Add To Cart</router-link>
-
           </div>
         </div>
       </div>
@@ -162,4 +160,84 @@ margin-top: 2rem;
 }
 
   </style>
+
+
+  <!-- <template>
+    <div class="container mt-5">
+      <div class="row">
+   
+        <div class="col-md-6">
+          <div class="product-image">
+            <img :src="product.ProdUrl" alt="Product Image">
+          </div>
+        </div>
+  
+      
+        <div class="col-md-6">
+          <div class="product-details">
+            <h1 class="product-title">{{ product.ProdName }}</h1>
+            <p class="product-category">{{ product.Category }}</p>
+            <p class="product-price">Price: R {{ product.Amount }}</p>
+            <div class="product-description">
+              <h3>Description:</h3>
+              <p>{{ product.Description }}</p>
+            </div>
+            <div class="product-buttons">
+              <button class="btn btn-primary" @click="addToCart">Add to Cart</button>
+              <router-link to="/products" class="btn btn-secondary">Back to Products</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <style scoped>
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-title {
+    font-size: 36px;
+    margin-top: 0;
+  }
+  
+  .product-category {
+    font-size: 18px;
+    color: #888;
+  }
+  
+  .product-price {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .product-description h3 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  .product-buttons {
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin-left: 10px;
+  }
+  
+  .btn-primary:hover, .btn-secondary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  </style> -->
   

@@ -9,7 +9,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabelinfo">{{ user.FirstName }}</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabelinfo">{{ userData.FirstName }}</h1>
           <button
             type="button"
             class="btn-close"
@@ -27,7 +27,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.FirstName"
+                v-model="userData.FirstName" :placeholder="user.FirstName"
               />
             </div>
             <div class="mb-3">
@@ -38,7 +38,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.LastName"
+                v-model="userData.LastName" :placeholder="user.LastName"
               />
             </div>
             <div class="mb-3">
@@ -49,7 +49,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.UserRole"
+                v-model="userData.UserRole" :placeholder="user.UserRole"
               />
             </div>
             <div class="mb-3">
@@ -60,9 +60,10 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.UserEmail"
+                v-model="userData.UserEmail" :placeholder="user.UserEmail"
               />
             </div>
+            
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Password</label>
               <input
@@ -71,7 +72,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.UserPass"
+                v-model="userData.UserPass" :placeholder="user.UserPass"
               />
             </div>
             <div class="mb-3">
@@ -82,7 +83,7 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.Address"
+                v-model="userData.Address" :placeholder="user.Address"
               />
             </div>
             <div class="mb-3">
@@ -93,27 +94,27 @@
                 id="recipient-na"
                 autocomplete="off"
                 required
-                v-model="user.UserProfile"
+                v-model="userData.UserProfile" :placeholder="user.UserProfile"
               />
             </div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              @click.prevent="updateUser"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Submit
+            </button>
           </form>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button
-            @click.prevent="updateUser"
-            type="button"
-            class="btn btn-primary"
-            data-bs-dismiss="modal"
-          >
-            Submit
-          </button>
         </div>
       </div>
     </div>
@@ -124,8 +125,8 @@
 export default {
   name: "updateUsersComp",
   props: ["user"],
-  // data() {
-  //   return {
+  data() {
+    return {
       // product: {
       // // Make sure to include a prop for prodID or remove it if not needed
       //   ProdName: '',
@@ -134,20 +135,22 @@ export default {
       //   Category: '', // 'category' should be 'Category' to match the v-model
       //   ProdUrl: '',
       // }
-      // user: {
-      //   FirstName: '',
-      //   LastName: '',
-      //   UserRole: '',
-      //   UserEmail: '',
-      //   UserPass: '',
-      //   Address: '',
-      //   pro
-  //     }
-  //   }
-  // }
+      userData: {
+        UserID: this.user.UserID, 
+        FirstName: null,
+        LastName: null,
+        Address: null,
+        UserPass: null,
+        UserRole: null,
+        UserEmail: null,
+        UserProfile: null
+      }
+    }
+  },
   methods: {
     updateUser() {
-      this.$store.dispatch("updateUsers", this.user);
+      console.log(this.userData);
+      this.$store.dispatch("updateUsers", this.userData);
     },
   },
 };

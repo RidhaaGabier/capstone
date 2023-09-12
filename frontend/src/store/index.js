@@ -9,11 +9,12 @@ const dataUrl = 'https://capstone-8rni.onrender.com/';
 
 export default createStore({
   state: {
-    products: null,
+    products: [],
     product: null,
     users: null,
     user:null,
     token:  null,
+    cart: []
   },
   mutations: {
     SET_PRODUCTS(state, products) {
@@ -48,6 +49,9 @@ export default createStore({
       }
       state.asc = !state.asc;
     },
+    setCart(state, data){
+      state.cart = data
+    }
     
   },
   actions: {
@@ -189,14 +193,24 @@ async fetchUser(context, id) {
       // }
       try {
         const response = await axios.patch(`https://capstone-8rni.onrender.com/user/${payload.UserID}`, payload);
-        const UserToEdit = response.data;
-        context.dispatch("fetchUsers");
-        sweet({
-          title: "User Updated",
-          text: UserToEdit.msg,
-          icon: "success",
-          timer: 2000
-        })
+        const {msg} = response.data;
+        if(msg) {
+
+          context.dispatch("fetchUsers");
+          sweet({
+            title: "User Updated",
+            text: msg,
+            icon: "success",
+            timer: 2000
+          })
+        }else {
+          sweet({
+            title: "error",
+            text: msg,
+            icon: "error",
+            timer: 2000
+          })
+        }
       } catch (error) {
         console.error(error);
       }
@@ -301,5 +315,15 @@ async fetchUser(context, id) {
  
 
   },
+
+  fetchCart({commit}){
+    
+    const data = JSON.parse(localStorage.getItem('cart'))
+    console.log(data);
+
+    if(data){
+      commit('setCart', data)
+    }
+  }
  
 })

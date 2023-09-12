@@ -1,5 +1,21 @@
 <template lang="">
     <div>
+      <section class=" overflow-x-hidden hero m-0 align-content-sm-start">
+                <div class="hero-inner text-center">
+                    <img src="https://i.postimg.cc/nzTTHzvG/Meubel-House-Logos-05.png" alt="">
+                  <p class="text">Profile</p>
+                 <a href="#" class="btn shadow__btn mb-2">Welcome<i class="fa-regular fa-greater-than">User</i></a>
+                </div>
+              </section>
+  
+
+                <!----featured info-->
+                <section id="featured" class="mt-3 text-center">
+                  <div class="container">
+                  <h2 class="text-black">Your Safety Is Our Priority</h2>
+                  </div>
+                </section>
+                <!--categories--->
         <div class="container-fluid">
     <div class="row gap-3 justify-content-center" v-if="user"  :key="user.UserID" :user="user">
       <div class=" text-center" >
@@ -14,7 +30,8 @@
             <p class="card-text"> {{ user.UserRole }}</p>
 
 
-            <router-link class="btn" to="/">Go Back</router-link>
+            <router-link class="btn-prod" to="/">Go Back</router-link>
+            
 
           </div>
         </div>
@@ -32,15 +49,17 @@
 
 <script>
 import SpinnerComp from '@/components/Spinner.vue';
+import UpdateUser from "@/components/UpdateUser.vue";
 import { useCookies } from 'vue3-cookies';
 const {cookies} = useCookies();
 export default {
   computed: {
     user() {
-      return this.$store.state.user || cookies.get('LegitUser').result;
+      return cookies.get('LegitUser').result;
     },
   },
-  components:{SpinnerComp},
+  components:{SpinnerComp,UpdateUser,},
+  
 };
 </script>
   <style scoped>
@@ -59,6 +78,63 @@ export default {
    font-family: 'REM', sans-serif;
     background-color:#eaeaea;
   }
+  .hero {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url(https://i.postimg.cc/y8yHbMPv/shoe-sneaker-mockup-psfiles-758x569.jpg); */
+  background-image: url(https://i.postimg.cc/Kv6FByBX/new-walll-light.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-weight: 600;
+  font-size: 50px;
+  font-family: 'REM', sans-serif;
+  }
+  .hero{
+    width: auto;
+  }
+  .hero-inner{
+  font-size:65px;
+  /* background-color: #E9D5B7; */
+  color: black;
+  }
+  #featured, h2, p{
+      font-family: 'REM', sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+   font-family: 'REM', sans-serif;
+    background-color:#eaeaea;
+  }
+  .container{
+    width:900px;
+    margin:0px auto;
+  }
+  .text-black{
+  text-align: center;
+  font-weight: bold;
+  margin: 3rem;
+  font-size: 25px !important;
+  
+}
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: black;
+    border-radius: 7px;
+    letter-spacing: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
   .card-title {
 margin-left: 10px;
 text-align: center;
@@ -68,22 +144,26 @@ margin-left: 20px;
 text-align: center;
 font-size: 18px;
 }
-.btn{
+.btn-prod{
     padding: 5px;
     background: #B88E2F;
   box-shadow: 0 0 25px #FFF3E3;
   cursor: pointer;
-  width: 7%;
+  width: 11%;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
 
   }
 
-  .btn:hover{
+  .btn-prod:hover{
+    color: black;
     box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#FFF3E3;
 
   }
 .card-img-top{
-height: 400px;
-width: 500px;
+height: 390px;
+width: 315px;
 margin: auto;
 border-radius: 30px;
 box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#FFF3E3;

@@ -109,6 +109,9 @@ const {cookies} = useCookies()
  .sponsors-law{
    font-size: 9px !important;
  }
+ .text{
+  font-size: 35px;
+ }
 }
   .popular{
     background-color:  #F7D069;

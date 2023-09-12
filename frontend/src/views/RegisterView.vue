@@ -8,7 +8,7 @@
                 </div>
               </section>
         <div style="background-color:#F9F1E7; padding: 1.1rem; color: black; text-align: center; margin-bottom: 3rem;">
-              <h3>Become Part Of Our Furniture</h3>
+              <h3 class="phrase">Become Part Of Our Furniture</h3>
             </div>
     <div class="registration-form">
       
@@ -142,6 +142,15 @@
   }
   .sponsors-law{
     font-size: 9px !important;
+  }
+  .text{
+    font-size: 35px;
+  }
+  .shadow__btn{
+    font-size: 10px !important;
+  }
+  .phrase{
+    font-size: 18px;
   }
 }
 

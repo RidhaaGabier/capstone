@@ -48,6 +48,9 @@
           <li id="fade-in">
             <router-link to="/register"><i class="fa-solid fa-user-plus"></i></router-link>
           </li>
+          <!-- <li id="fade-in">
+            <router-link to="/checkout">Checkout</router-link>
+          </li> -->
     
           <li id="fade-in">
             <router-link to="/checkout" @click="logOut"><i class="fa-solid fa-right-to-bracket"></i></router-link>
@@ -155,7 +158,7 @@ export default {
 
   @media screen and (width>1000px) {
     .l{
-  margin-right: 14rem;
+  margin-right: 12rem;
 } 
   }
 

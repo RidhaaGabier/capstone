@@ -25,7 +25,7 @@
               <labe style="margin-left:20px;">&#11820; | Showing 1-0 of 10 results</labe>
               </div>
               <div class="sort-container">
-                <label>Show </label> <label style="background-color: white; color: rgb(58, 58, 58); padding: 7px;"> 16</label>
+                <label>Show </label> <label style="background-color: white; color: rgb(58, 58, 58); padding: 7px;"> 12</label>
               <label for="sort">Sort by:</label>
               <select id="sort" v-model="sortOrder">
               <option value="price-high">Price Low to High</option>
@@ -66,7 +66,10 @@
                   <h5 class="card-title">{{ product.ProdName}}</h5>
                   <p class="card-text">{{ product.Category}}</p>
                   <p class="card-text">R {{ product.Amount }}</p>
-               <router-link class="btn_prod" :to ="{name: 'product', params: {id: product.ProdID}}">See more</router-link>
+               <div id="button">
+                <router-link class="btn_prod" :to ="{name: 'product', params: {id: product.ProdID}}">See more</router-link>
+               <button style="border: none; padding: 5px; margin:;" class="btn_prod" @click="add(product)">Add to cart</button>
+               </div>
                 </div>
               </div>
             </div>
@@ -261,7 +264,24 @@ import Spinner from '../components/Spinner.vue';
       this.$store.commit("sortPropertiesByPrice");
     },
       
+    add(product){
+      if(localStorage.getItem('cart')){
+        const data = JSON.parse(localStorage.getItem('cart'))
+
+        const newData = { product }
+
+        data.push(newData)
+
+        localStorage.setItem('cart', JSON.stringify(data))
+      } else{
+        const oldData = [{ product}]
+        localStorage.setItem('cart', JSON.stringify(oldData))
+      }
+      // localStorage.setItem('cart', JSON.stringify(product))
+      // console.log(localStorage.getItem('cart'));
+    }
     },
+
 
       watch: {
     selectedCategory:"filter", // Call filter method when selectedCategory changes
@@ -302,6 +322,12 @@ import Spinner from '../components/Spinner.vue';
 }
   </script>
   <style scoped>
+  
+#button{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
 @media screen and (max-width: 500px){
   
