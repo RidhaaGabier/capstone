@@ -93,10 +93,10 @@ class Users{
             })
         })
     }
-    updateUser(req,res){
+    async updateUser(req,res){
         const data = req.body
         if(data.UserPass){
-            data.UserPass = hashSync(data.UserPass,15)
+            data.UserPass = await hash(data.UserPass,15)
         }
         const query =`
         UPDATE users
