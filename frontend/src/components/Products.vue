@@ -102,4 +102,6 @@ export default {
   background: #918989af;
   box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#CCC5B9 !important;
 }
+
+
 </style>

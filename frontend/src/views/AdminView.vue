@@ -9,7 +9,8 @@
       
     </div>
 
-    <table v-if="products">
+    <div class="table-container">
+    <table v-if="products"  class="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -65,10 +66,12 @@
         <UpdateProducts :product="product" />
       </div>
     </table>
+  
     <div style="text-align: center !important; margin-top: 3rem" v-else>
       Loading...
       <Spinner />
     </div>
+  </div>
 
     <h1 class="text-black">Users List</h1>
     <div class="text-center">
@@ -78,7 +81,7 @@
     </div>
 
    
-
+<div class="table-container">
     <table v-if="users">
       <thead>
         <tr>
@@ -136,10 +139,12 @@
  
       </div>
     </table>
+  
     <div style="text-align: center !important; margin-top: 3rem" v-else>
       Loading...
       <Spinner />
     </div>
+  </div>
   </div>
 
 </template>
@@ -242,5 +247,52 @@ img {
   border-radius: 5px;
   padding: 5px;
   color: white;
+}
+
+@media (max-width: 500px) {
+  table {
+    font-size: 12px; /* Adjust the font size for smaller screens */
+  }
+
+  /* You can add more specific styling for smaller screens here */
+  .btn-update,
+  .btn-dark {
+    font-size: 10px; /* Adjust the font size for buttons on smaller screens */
+    padding: 2px 5px;
+  }
+}
+.table-container {
+  overflow-x: auto; /* Add horizontal scrolling for small screens */
+}
+
+
+.img-responsive {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.text-black {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.btn {
+  background: #dc3545;
+}
+
+
+
+/* Content styles */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Example button style */
+
+
+.btn:hover {
+  background-color:rgb(100, 4, 4);
 }
 </style>

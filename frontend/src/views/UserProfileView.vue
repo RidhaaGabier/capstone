@@ -19,7 +19,7 @@
         <div class="container-fluid">
     <div class="row gap-3 justify-content-center" v-if="user"  :key="user.UserID" :user="user">
       <div class=" text-center" >
-        <div style="width:100%;height:100%;" class="card justify-content-center">
+        <div style="width:100%;height:100%; margin-bottom: 2rem" class="card justify-content-center">
           <img :src="user.UserProfile" class="card-img-top" style="padding: 1.6rem;" height="550">
           <div class="card-body justify-content-center">
             <h5 class="card-title">{{ user.FirstName }}</h5>
@@ -161,6 +161,14 @@ font-size: 18px;
     box-shadow: 4px 4px 10px #ccc5b9, -4px -4px 10px#FFF3E3;
 
   }
+  .card{
+    border: none;
+  }
+  .card-img-top{
+    height: 300px !important;
+    width: 300px !important;
+    padding: 10px !important;
+  }
 .card-img-top{
 height: 390px;
 width: 315px;
@@ -217,6 +225,37 @@ margin-top: 2rem;
   margin-bottom: 3rem;
   font-size: 20px;
 }
+
+@media screen and (max-width: 500px){
+
+  .hero-inner {
+    font-size: 30px;
+  }
+  .text-black {
+    font-size: 18px !important;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+  .btn-prod {
+    width: 30%;
+    font-size: 14px;
+  }
+  .container{
+    width: auto;
+  }
+  .card-img-top{
+    height: 220px;
+    width: 210px;
+    padding: 10px !important;
+  }
+  .card{
+    padding: 10px;
+  }
+
+}
+
+
 
   </style>
 

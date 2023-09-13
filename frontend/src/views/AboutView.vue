@@ -130,6 +130,9 @@ body{
   .pic-info{
     font-size: 19px;
   }
+  .text{
+    font-size: 40px;
+  }
 }
 
 

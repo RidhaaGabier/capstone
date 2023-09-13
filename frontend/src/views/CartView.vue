@@ -8,6 +8,7 @@
                 </div>
               </section>
     <div class="checkout" v-if="cart.length > 0">
+      <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>
@@ -43,12 +44,13 @@
           </tr>
         </tbody>
       </table>
+    </div>
       <div class="d-flex justify-content-end w-100" v-if="cart.length > 0">
       <!-- ... Existing code for displaying cart items ... -->
       <div id="grandTotal" class="text-black">Grand Total: R {{ grandTotal }}</div>
     </div>
     <div class="container">
-        <h2>Select Payment Option</h2>
+        <h2 class="heading">Select Payment Option</h2>
         <form id="payment-form">
             <div class="form-group">
                 <label for="credit-card">
@@ -230,4 +232,33 @@ export default {
     transition: 0.5s;
     transition-property: box-shadow;
   }
+  @media screen and (max-width: 500px) {
+  .hero-inner {
+    font-size: 37px !important;
+  }
+  .text-black {
+    font-size: 18px !important;
+  }
+  .btn {
+    font-size: 10px !important;
+  }
+  .table {
+    font-size: 12px !important;
+  }
+  .prod {
+    height: 3rem;
+    width: 3rem;
+  }
+  .checkout {
+    padding: 0.5rem;
+  }
+  #grandTotal {
+    margin-right: 0;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+   
+}
 </style>

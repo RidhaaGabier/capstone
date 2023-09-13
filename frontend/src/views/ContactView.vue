@@ -22,7 +22,7 @@
                 <!-- contact -->
                 <div class="contact-container">
                 <div class="contact-details">
-                <h2>Contact Details</h2>
+                <h2 class="info-contact">Contact Details</h2>
                 <p><i class="fa-solid fa-business-time"></i> <strong>Business Name:</strong> Decor</p>
                 <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> 122 Main Street, Cape Town, South Africa</p>
                 <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> (021) 954-7890</p>
@@ -44,7 +44,7 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" placeholder="We appreciate your feedback" required></textarea>
 
-                <button type="submit">Submit</button>
+                <button class="button-submit" type="submit">Submit</button>
                 </form>
                 </div>
                 </div>
@@ -135,13 +135,47 @@
   }
   @media screen and (max-width: 500px){
  
+    .hero-inner {
+    font-size: 40px !important; /* Adjust font size for hero section */
+  }
  .text-sponsor{
    font-size: 12px !important;
  }
  .sponsors-law{
    font-size: 9px !important;
  }
+ .contact-form{
+  width: 100% !important;
+  padding: 0px !important;
+  margin-top: 2rem;
+ }
+ .button-submit{
+  width: 100% !important;
+  margin: 0px !important;
+  font-size: 15px ;
+  padding: 10px !important;
+ }
+
+ .contact-details{
+  width: 100% !important;
+  margin: auto !important;
+  padding: 0px !important;
+ }
+  /* Make the contact container flex column */
+  .contact-container {
+    flex-direction: column;
+  }
+
+  /* Swap order of contact details and contact form */
+  .contact-details {
+    order: 1;
+  }
+  .contact-form {
+    order: 2;
+  }
 }
+
+
   .popular{
     background-color:  #F7D069;
   }

@@ -356,8 +356,85 @@ import Spinner from '../components/Spinner.vue';
     padding: 6px !important;
     font-size: 15px !important;
   }
+  /* Make the hero section responsive */
+.hero-inner {
+  font-size: 45px !important;
+}
+
+/* Make the filter and sort container responsive */
+.sort-filter-container {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 13px;
+}
+
+.filter-container,
+.sort-container,
+.search-container {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+  font-size: 11px;
+}
+
+/* Make the products responsive */
+/* .card {
+  width: 100%;
+  height: 520px !important;
+} */
+.card-img-top{
+  height: 340px;
+  width: 100%;
+}
+
+/* Make the featured section responsive */
+.text-black {
+  font-size: 25px !important;
+  margin-top: 3rem;
+}
+
+.text-blacks {
+  font-size: 16px !important;
+}
+
+/* Make the carousel and text container responsive */
+.flexed-carousel-container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Make the sponsors section responsive */
+.Sponsors {
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+.d-block{
+  width: 100% !important;
+  height: 280px !important;
+}
+.bold-text{
+  font-size: 22px !important;
+  margin: auto ;
+  text-align: center !important;
 
 }
+.desc-carousel{
+  font-size: 15px !important;
+  text-align: center !important;
+
+}
+.text-container{
+  margin: auto !important;
+}
+.btn{
+  padding: 6px !important;
+}
+}
+
 
 .Sponsors {
   display: flex;
