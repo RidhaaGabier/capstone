@@ -158,7 +158,7 @@ async fetchUser(context, id) {
 
     // Adds a User
     addUser(context,payload) {
-      axios.post("https://capstone-8rni.onrender.com/product", payload)
+      axios.post("https://capstone-8rni.onrender.com/register", payload)
         .then(response => {
           console.log("User added:", response.data);
           context.dispatch("fetchUsers")
@@ -218,34 +218,37 @@ async fetchUser(context, id) {
       cookies.remove('LegitUser'); //removes the cookie
     },
 
-    // login
-    async loginUser(context, payload) {
-      try {
-        const {msg,token,result} = ( await axios.post(`${dataUrl}login`, payload)).data
-          if(result) {
-            context.commit("setUser", {result,msg});
-            cookies.set("LegitUser", {token, msg, result})
-            authenticateUser.applyToken(token)
-            sweet({
-              title: "Login",
-              text: msg,
-              icon: "success",
-              timer: 2000
-            })
-            router.push({name: 'home'})
-          }
-          else {
-            sweet({
-              title: "Error",
-              text: msg,
-              icon: "error",
-              timer: 2000
-            })
-          }
-      } catch(error) {
-        context.commit("setMsg", "An error has occurred.")
-        };
-    },
+   // login
+   async loginUser(context, payload) {
+    try {
+      const results = await axios.post(`${dataUrl}login`, payload)
+      
+      let {msg,token, result} = results.data
+      console.log(result);
+        if(result) {
+          context.commit("setUser", {result,msg});
+          cookies.set("LegitUser", {token, msg, result})
+          authenticateUser.applyToken(token)
+          sweet({
+            title: "Login",
+            text: msg,
+            icon: "success",
+            timer: 2000
+          })
+          router.push({name: 'home'})
+        }
+        else {
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 2000
+          })
+        }
+    } catch(error) {
+      context.commit("setMsg", "An error has occurred.")
+      };
+  },
 
 
 

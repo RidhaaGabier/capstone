@@ -57,10 +57,10 @@ export default {
         
 //     },
 
-    mounted() {
+    },
+     mounted() {
         this.$store.dispatch('fetchProducts');
     },
-    }
 }
 </script>
 <style scoped>

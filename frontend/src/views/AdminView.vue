@@ -72,9 +72,12 @@
 
     <h1 class="text-black">Users List</h1>
     <div class="text-center">
-
+      <h3 class="mt-5">Add New User</h3>
+      <AddUser />
       
     </div>
+
+   
 
     <table v-if="users">
       <thead>
@@ -84,7 +87,7 @@
           <th scope="col">Surname</th>
           <th scope="col">Role</th>
           <th scope="col">Email</th>
-          <th scope="col">Password</th>
+          <!-- <th scope="col">Password</th> -->
           <th scope="col">Address</th>
           <th scope="col">Profile</th>
           <th scope="col">Edit</th>
@@ -98,7 +101,7 @@
           <td>{{ user.LastName }}</td>
           <td>{{ user.UserRole }}</td>
           <td>{{ user.UserEmail }}</td>
-          <td>{{ user.UserPass }}</td>
+          <!-- <td>{{ user.UserPass }}</td> -->
           <td>{{ user.Address }}</td>
           <td>
             <img
@@ -112,7 +115,7 @@
         type="button"
         class="btn-update"
         data-bs-toggle="modal"
-        :data-bs-target="'#exampleModal'+user.UserID"
+        :data-bs-target="'#userModal'+user.UserID"
         data-bs-whatever="@mdo"
       >
         Update
@@ -155,9 +158,9 @@ export default {
     users() {
       return this.$store.state.users;
     },
-    product() {
-      return this.$store.state.product;
-    },
+    // product() {
+    //   return this.$store.state.product;
+    // },
     products() {
       return this.$store.state.products;
     },

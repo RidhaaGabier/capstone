@@ -14,7 +14,7 @@
               <section id="featured" class="mt-3">
               <div>
                 <h2 class="text-black">Browse The Range</h2>
-                <p class="text-blacks">We have a Featured Collection available for Men and Women.</p>
+                <p class="text-blacks">We have a Featured Collection available for Decor furniture.</p>
               </div>
             </section>
     <!--categories--->
@@ -29,7 +29,7 @@
                 </div>
                 <div class="back from-left">
                   <p class="des fw-semibold p-2">
-                  Shop quality summer shoes for both men and women.
+                  Shop quality summer furniture for both you and me.
                   </p>
                   <button class="slide__btn">
                     <a href="/products" >Shop Now!</a>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="back from-bottom">
                   <p class="des fw-semibold p-2">
-                    Shop quality formal shoes to complete your look!
+                    Shop quality formal Decor to complete your look!
                   </p>
                   <button class="slide__btn">
                     <a href="/products" >Shop Now!</a>
@@ -65,7 +65,7 @@
               </div>
               <div class="back from-right">
                 <p class="des fw-semibold p-2">
-                Shop the best quality and step up your shoe drip!
+                Shop the best quality and step up your bedroom drip!
                 </p>
                 <button class="slide__btn">
                   <a href="/products">Shop Now!</a>

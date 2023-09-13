@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
           <label for="message-text" class="col-form-label">Surname</label>
-          <input type="text" class="form-control" id="recipient-na" autocomplete="off" required name="LastName" v-model="user.Lastname" >
+          <input type="text" class="form-control" id="recipient-na" autocomplete="off" required name="LastName" v-model="user.LastName" >
         </div>
         <div class="mb-3">
           <label for="message-text" class="col-form-label">Role</label>

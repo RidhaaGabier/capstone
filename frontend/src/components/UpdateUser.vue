@@ -1,15 +1,15 @@
 <template>
   <div
     class="modal fade"
-    :id="'exampleModal' + user.UserID"
+    :id="'userModal' + user.UserID"
     tabindex="-1"
-    aria-labelledby="exampleModalLabelinfo"
+    aria-labelledby="userModalInfo"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabelinfo">{{ user.FirstName }}</h1>
+          <h1 class="modal-title fs-5" id="userModalInfo">{{ user.FirstName }}</h1>
           <button
             type="button"
             class="btn-close"
