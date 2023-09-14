@@ -9,11 +9,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    beforeEnter() {
-      if(!cookies.get('LegitUser')) {
-        router.push({name: 'login'})
-      }
-    }
+    // beforeEnter() {
+    //   if(!cookies.get('LegitUser')) {
+    //     router.push({name: 'login'})
+    //   }
+    // }
   },
   {
     path: '/about',
@@ -55,8 +55,8 @@ const routes = [
     component: () => import('../views/RegisterView.vue')
   },
   {
-    path: '/checkout',
-    name: 'checkout',
+    path: '/login',
+    name: 'login',
     component: () => import('../views/LoginView.vue')
    
   },
@@ -80,26 +80,26 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach(async (to, from) => {
-  console.log(store.state)
-  if (
-    // make sure the user is authenticated
-    !store.state.user &&
-    // ❗️ Avoid an infinite redirect
-    to.name === 'home'
-  ) {
-    // redirect the user to the login page
-    return { name: 'checkout' }
-  }
-  else if(
-    // make sure the user is authenticated
-    store.state.user &&
-    // ❗️ Avoid an infinite redirect
-    to.name === 'checkout'
-  ) {
-    // redirect the user to the login page
-    return { name: 'home' }
-  }
-})
+// router.beforeEach(async (to, from) => {
+//   console.log(store.state)
+//   if (
+//     // make sure the user is authenticated
+//     !store.state.user &&
+//     // ❗️ Avoid an infinite redirect
+//     to.name === 'home'
+//   ) {
+//     // redirect the user to the login page
+//     return { name: 'login' }
+//   }
+//   else if(
+//     // make sure the user is authenticated
+//     store.state.user &&
+//     // ❗️ Avoid an infinite redirect
+//     to.name === 'login'
+//   ) {
+//     // redirect the user to the login page
+//     return { name: 'home' }
+//   }
+// })
 
 export default router

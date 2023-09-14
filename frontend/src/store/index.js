@@ -12,7 +12,7 @@ export default createStore({
     products: [],
     product: null,
     users: null,
-    user:null,
+    user:null || JSON.parse(localStorage.getItem("user")) ,
     token:  null,
     cart: []
   },
@@ -27,8 +27,8 @@ export default createStore({
       state.users = users
     },
     setUser(state, user){
-      state.user = user
-      localStorage.setItem("user", JSON.stringify(user));
+      state.user = user.result
+      localStorage.setItem("user", JSON.stringify(user.result));
     },
     setToken(state, token) {
       state.token = token;
@@ -214,7 +214,8 @@ async fetchUser(context, id) {
 
     // log out
     async logOut(context) {
-      context.commit('setUser')
+      context.state.user = null
+      localStorage.removeItem('user')
       cookies.remove('LegitUser'); //removes the cookie
     },
 
