@@ -32,6 +32,10 @@
 
             <router-link class="btn-prod" to="/">Go Back</router-link>
             
+            <button @click="EditsUer" class="btn"><EditProfile/></button>
+
+        <button @click="deleteUser" class="btn btn-danger">Delete User</button>
+            
 
           </div>
         </div>
@@ -50,6 +54,7 @@
 <script>
 import SpinnerComp from '@/components/Spinner.vue';
 import UpdateUser from "@/components/UpdateUser.vue";
+import EditProfile from '@/components/EditProfile.vue'
 import { useCookies } from 'vue3-cookies';
 const {cookies} = useCookies();
 export default {
@@ -58,7 +63,7 @@ export default {
       return cookies.get('LegitUser').result;
     },
   },
-  components:{SpinnerComp,UpdateUser,},
+  components:{SpinnerComp,UpdateUser,EditProfile},
   
 };
 </script>

@@ -160,26 +160,6 @@ export default {
 <style scoped>
     /* Slide Prods */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
 

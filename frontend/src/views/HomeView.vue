@@ -146,6 +146,11 @@ font-size: 12px;
     padding: 15px !important;
     
   }
+  .card-img-top{
+height: 340px;
+width: 100%;
+}
+
 }
 .popular{
   background-color:  #F7D069;
@@ -406,5 +411,6 @@ details summary{
    outline: none;
 }
 /* carousel */
+
 
 </style>

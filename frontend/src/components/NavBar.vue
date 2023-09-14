@@ -38,7 +38,11 @@
             <router-link to="/userProfile"  >User</router-link>
           </li>
           
-          
+
+
+             <li id="fade-in">
+            <router-link to="/search"><i class="fa-solid fa-magnifying-glass"></i></router-link>
+          </li>
           <li id="fade-in">
             <router-link to="/cart"><i class="fa-solid fa-cart-shopping"></i></router-link>
           </li>
@@ -158,7 +162,7 @@ export default {
 
   @media screen and (width>1000px) {
     .l{
-  margin-right: 12rem;
+  margin-right: 11rem;
 } 
   }
 
