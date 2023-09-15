@@ -143,6 +143,79 @@ margin-top: 2rem;
     margin-bottom: 5rem;
    
   }
+  @media screen and (max-width: 500px){
+   .card-img-top{
+    width: 100%;
+    height: 200px !important;
+    padding: 5px !important;
+   }
+   .card{
+    border: none;
+   }
+
+   .btn{
+  padding: 2px !important;
+  font-size: 15px !important;
+  width: 30%;
+}
+
+.Sponsors {
+display: flex;
+justify-content: space-between;
+}
+.text-sponsor{
+font-size: 26px;
+color: black;
+}
+.sponsors-law{
+color: black;
+font-size: 16px;
+}
+
+.Sponsors div {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.Sponsors div i {
+font-size: 20px;
+margin-bottom: 8px; /* Adjust spacing between icon and text */
+}
+
+.Sponsors{
+  background: #E9D5B7;
+  padding:20px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+ 
+}
+
+
+.text-black{
+text-align: center;
+font-weight: bold;
+font-size: 38px;
+margin-top: 3rem;
+
+}
+
+.text-blacks{
+text-align: center;
+margin-bottom: 3rem;
+font-size: 20px;
+}
+
+.text-sponsor{
+  font-size: 12px !important;
+}
+.sponsors-law{
+  font-size: 9px !important;
+}
+
+
+  }
   
 
 .text-black{

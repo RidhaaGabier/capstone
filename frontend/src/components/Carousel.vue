@@ -62,11 +62,11 @@
               class="single-testimonial-item w-70 mx-auto"
               style="height: 160px; width: 46rem"
             >
-              Smooth and thick on the skin, good deep hydration, not leaving a
-              trace of greece behind. I love it! My skin is very dry, itchy with
-              ashy elbows dry finger nails, fruity buns with a bit of a itch and
-              this serum does a perfect job of deep hydration on my skin. Feels
-              thick, smooth. I highly recommend!!
+              Smooth and thick on the material, good deep colours, not leaving a
+              trace of splitters behind. I love it! My furniture is stunning with
+              equsite details not left unnoticed, stunning designs with a bit of a new smell
+              to it. I do recommend , perfect decor for loving homes. Feels
+              great owning quality decor. I highly recommend!!
               <span class="customer-fam" style="margin: 4rem">Customer</span>
             </p>
           </div>
@@ -83,7 +83,7 @@
               style="height: 160px; width: 46rem"
             >
               The online store has a great layout. I can search by brand,
-              skin-type and category which is makes navigating so easy!! They
+              furniture-type and category which is makes navigating so easy!! They
               carry more brands than other Korean skincare online stores.
               Products are well-described and I love the blogs too! Delivery is
               fast. I most definitely shop here again.
@@ -101,11 +101,11 @@
               class="single-testimonial-item w-70 mx-auto"
               style="height: 160px; width: 46rem"
             >
-              Ran out of my Korean skincare and Skin Theory had a selection (&
+              Ran out of my furniture ideas. Decor has a selection (&
               more) of what I was looking for. Price of products are affordable.
               Delivery was very quick and was pleasantly surprised at the
-              generosity of samples. Will definitely return to order more. This
-              products leave my skin even more radiant.
+              generosity of guidence. Will definitely return to order more. This
+              products leave my house even more radiant.
               <span class="customer-fam" style="margin: 4rem">Customer</span>
             </p>
           </div>
@@ -120,11 +120,11 @@
               class="single-testimonial-item w-70 mx-auto"
               style="height: 160px; width: 46rem"
             >
-              First time online shopping with Skin Theory was great! Wide range
-              of k-beauty products, very user friendly and simple shopping
-              process, and loved the many lovely free samples that came along
-              with my purchases. Will definitely be using Skin Theory again for
-              my next k-beauty fix! I am just amazed overall!
+              First time online shopping with Decor was great! Wide range
+              of furniture products, very user friendly and simple shopping
+              process, and loved the many lovely free ideas that they offer
+              with my purchases. Will definitely be using Decor again for
+              my next furniture fix! I am just amazed overall!
               <span class="customer-fam" style="margin: 4rem">Customer</span>
             </p>
           </div>

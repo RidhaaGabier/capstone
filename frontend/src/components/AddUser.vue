@@ -93,6 +93,6 @@ export default {
 
 <style scoped>
 .btn{
-  background: purple;
+  margin-bottom: 5rem;
 }
 </style>

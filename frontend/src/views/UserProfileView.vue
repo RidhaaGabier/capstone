@@ -46,7 +46,7 @@
               <!-- <p class="card-text"> {{ user.UserPass }}</p> -->
               <!-- <p class="card-text">{{ user.UserRole }}</p> -->
 
-              <router-link class="btn-prod" to="/">Go Back</router-link>
+              <router-link class="btn btn-secondary" to="/">Go Back</router-link>
 
               <form @submit.prevent="updateUser">
                 <div class="mb-3">
@@ -141,7 +141,7 @@
                 <button
                   @click="$store.dispatch('updateUsers' , user)"
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-secondary"
                 >
                   Update
                 </button>

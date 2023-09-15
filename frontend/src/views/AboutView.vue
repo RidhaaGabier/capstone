@@ -16,7 +16,7 @@
 
            <!-- image and description -->
             <div class="centered">
-    <img class="about-img" src="https://i.postimg.cc/50hjWjNN/fur3.jpg" alt="Your Image Description">
+    <img class="about-img" src="https://i.postimg.cc/QtKQn1Th/Rectangle-68.png" alt="Your Image Description">
     <div class="icon-container">
         <p class="icon"><i class="fas fa-solid fa-eye"></i> ¹⁰⁰⁰</p>
         <p class="icon"><i class="fas fa-solid fa-calendar-days"></i>  ¹⁴/ᴼᶜᵗ/²⁰²³</p>
@@ -25,12 +25,13 @@
             </div>
             <div style="text-align: center; margin-top: 20px;">
                 <h2 class="pic-info">Going all-in with millennial design</h2>
-                <p class="about-prod" >Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
+                <p class="about-prod" >
+Going all-in with millennial design means infusing your space with a vibrant blend of pastel colors and retro-inspired elements. Embrace open-concept layouts and multifunctional furniture to maximize both style and functionality. Don't forget to incorporate plenty of indoor plants and unique statement pieces for everyone.</p>
             </div>
 
 
             <div class="centered">
-    <img class="about-img" src="https://i.postimg.cc/2SJpY8SG/fur7.jpg" alt="Your Image Description">
+    <img class="about-img" src="https://i.postimg.cc/gjRKr8zN/Rectangle-68-2.png" alt="Your Image Description">
     <div class="icon-container">
         <p class="icon"><i class="fas fa-solid fa-eye"></i> ¹²⁵⁰⁰</p>
         <p class="icon"><i class="fas fa-solid fa-calendar-days"></i>  ²³/ᴺᵒᵛ/²⁰²³</p>
@@ -39,12 +40,12 @@
             </div>
             <div style="text-align: center; margin-top: 20px;">
                 <h2 class="pic-info">Exploring new ways of decorating</h2>
-                <p class="about-prod" >Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
+                <p class="about-prod" >Exploring new ways of decorating involves embracing minimalist design principles, where less is more. Experiment with sustainable and repurposed materials to create eco-friendly decor that adds character to your space. Incorporate smart technology to seamlessly blend functionality with aesthetics, creating a modern and efficient living environment. We will always go the extra mile.</p>
             </div>
 
 
             <div class="centered">
-    <img class="about-img" src="https://i.postimg.cc/3RzWDH1F/traditional.jpg" alt="Your Image Description">
+    <img class="about-img" src="https://i.postimg.cc/NF11QtDn/Rectangle-68-3.png" alt="Your Image Description">
     <div class="icon-container">
         <p class="icon"><i class="fas fa-solid fa-eye"></i> 16750</p>
         <p class="icon"><i class="fas fa-solid fa-calendar-days"></i>  ¹⁹/ᴰᵉᶜ/²⁰²³</p>
@@ -54,7 +55,7 @@
             
             <div style="text-align: center; margin-top: 20px;">
                 <h2 class="pic-info">Handmade piece's that took time  </h2>
-                <p class="about-prod">Your Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis vel quam elementum bibendum. Nulla facilisi. Sed nec mauris in lectus cursus ullamcorper.</p>
+                <p class="about-prod">These creations often serve as cherished heirlooms, reminding us of the value of craftsmanship in our fast-paced, mass-produced world.Your Decor goes world wide. With high demands and hard work, consistency adapting are who we are. Showing original unseen designs we present to you Decor , all your need at one stop furniture store. We put our all in , that is why we the best over-all !</p>
             </div>
        
 <!-- End of image and description -->
