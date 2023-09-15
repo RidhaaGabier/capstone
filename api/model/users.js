@@ -32,7 +32,7 @@ class Users{
     login(req,res){
         const {UserEmail, UserPass} = req.body
         const query = `
-        SELECT  FirstName,LastName,UserEmail, UserPass, UserRole,UserProfile
+        SELECT  UserID, FirstName,LastName,UserEmail, UserPass, UserRole,UserProfile
         FROM users
         WHERE UserEmail = '${UserEmail}';
         `
