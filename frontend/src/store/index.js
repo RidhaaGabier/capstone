@@ -172,8 +172,11 @@ async fetchUser(context, id) {
 
 
     async updateUsers(context, payload) {
+      console.log(payload)
+
       try {
         const response = await axios.patch(`https://capstone-8rni.onrender.com/user/${payload.UserID}`, payload); 
+        console.log(response)
         // const response = await axios.patch(`http://localhost:3000/user/${payload.UserID}`, payload); 
         const {msg} = response.data;
         if(msg) {

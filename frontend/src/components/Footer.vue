@@ -13,18 +13,18 @@
   
       <!-- Right -->
       <div>
-        <a href="https://www.facebook.com/facebook/" target="_blank" class="me-4 text-reset">
-         <i style="color:#0A142F ;" class="fa-brands fa-facebook-f fa-fade"></i>
+        <a href="https://github.com/RidhaaGabier/capstone" target="_blank" class="me-4 text-reset">
+          <i style="color:#0A142F ;" class="fa-brands fa-github fa-fade"></i>
         </a>
-        <a href="https://twitter.com/explore?lang=en" target="_blank" class="me-4 text-reset">
-          <i style="color:#0A142F ;" class="fa-brands fa-twitter fa-fade"></i>
+        <a href="https://www.linkedin.com/in/ridhaa-gabier-08986b276/" target="_blank" class="me-4 text-reset">
+          <i style="color:#0A142F ;" class="fa-brands fa-linkedin fa-fade"></i>
         </a>
-        <a href="https://www.instagram.com/clothingshoponline/?hl=en" target="_blank" class="me-4 text-reset">
+        <a href="https://www.instagram.com/decor.furnitureshop/" target="_blank" class="me-4 text-reset">
           <i style="color:#0A142F ;"  class="fa-brands fa-instagram fa-fade"></i>
         </a>
-        <a href="https://www.whatsapp.com/" target="_blank" class="me-4 text-reset">
+        <!-- <a href="https://www.whatsapp.com/" target="_blank" class="me-4 text-reset">
           <i style="color:#0A142F ;" class="fa-brands fa-whatsapp fa-fade"></i>
-        </a>
+        </a> -->
       </div>
       <!-- Right -->
     </section>

@@ -160,7 +160,19 @@ export default {
 <style scoped>
     /* Slide Prods */
 
- 
+    @media screen and (max-width: 500px){
+      .line-heading{
+        font-size: 20px;
+        margin-right: 0px !important;
+      }
+      .single-testimonial-item{
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .customer-fam{
+        display: none;
+      }
+    }
 
 
 

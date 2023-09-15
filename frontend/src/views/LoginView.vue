@@ -17,11 +17,11 @@
       <p class="text-black mb-5" >Enter Details</p>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="UserEmail" placeholder="UserEmail" v-model="payload.UserEmail" required />
+        <input type="email" id="UserEmail" placeholder=" Enter User Email" v-model="payload.UserEmail" required />
       </div>
       <div class="form-group">
         <label for="password">Password :</label>
-        <input type="password" id="UserPass" placeholder="UserPass" v-model="payload.UserPass" required />
+        <input type="password" id="UserPass" placeholder="Enter User Password" v-model="payload.UserPass" required />
       </div>
       <div class="register">
            <router-link to="/register">
